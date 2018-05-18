@@ -1,0 +1,176 @@
+{
+  "title": "Jira",
+  "description": "Jira Connector",
+  "credentials": {
+    "fields": {
+      "username": {
+        "label":"Username",
+        "required": true,
+        "viewClass": "TextFieldWithNoteView",
+        "placeholder": "user",
+        "note": "Username for HTTP Basic Authentication"
+      },
+      "password": {
+        "label":"Password",
+        "required": true,
+        "viewClass": "TextFieldWithNoteView",
+        "placeholder": "password",
+        "note": "Password for HTTP Basic Authentication"
+      },
+      "schema": {
+        "label": "jira request schema",
+        "viewClass": "SelectView",
+        "model": {
+          "https": "https",
+          "http": "http"
+        },
+        "prompt": "Choose schema for Jira access",
+        "required": true
+      },
+      "host": {
+        "label": "jira host",
+        "viewClass": "TextFieldView",
+        "required": true
+      },
+      "port": {
+        "label": "jira port",
+        "viewClass": "TextFieldView",
+        "required": false
+      }
+    }
+  },
+  "actions": {
+    "getUser": {
+      "main": "./lib/actions/getUser.js",
+      "title": "retrieve an user",
+      "fields": {
+        "username": {
+          "label": "jira user to be retrieved",
+          "viewClass": "TextFieldView",
+          "required": true
+        },
+        "protocol": {
+          "label": "jira protocol",
+          "viewClass": "SelectView",
+          "model": {
+            "https": "https",
+            "http": "http"
+          },
+          "prompt": "Choose protocol for Jira access",
+          "required": true
+        },
+        "host": {
+          "label": "jira host",
+          "viewClass": "TextFieldView",
+          "required": true
+        },
+        "port": {
+          "label": "jira port",
+          "viewClass": "TextFieldView",
+          "required": false
+        },
+        "user": {
+          "label": "user",
+          "viewClass": "TextFieldView",
+          "required": true
+        },
+        "password": {
+          "label": "password",
+          "viewClass": "PasswordFieldView",
+          "required": true
+        }
+      },
+      "metadata": {
+        "out": "./lib/schemas/generic.out.json"
+      }
+    },
+    "createIssue": {
+      "main": "./lib/actions/createIssue.js",
+      "title": "creates a new Jira Issue",
+      "dynamicMetadata":true,
+      "fields": {
+        "digest": {
+          "label": "request digest",
+          "viewClass": "TextFieldView",
+          "required": false
+        },
+        "project": {
+          "label": "Project",
+          "viewClass": "SelectView",
+          "model": "listProjects",
+          "required": true,
+          "prompt": "Select Project"
+        },
+        "issueType": {
+          "label": "Issue Type",
+          "viewClass": "SelectView",
+          "model": "listIssueTypes",
+          "required": true,
+          "prompt": "Select Issue Type",
+		      "require": ["project"]
+        },
+        "priority": {
+          "label": "Priority",
+          "viewClass": "SelectView",
+          "model": "listPriorities",
+          "required": true,
+          "prompt": "Select Priority after modification of JIRA meta model",
+		      "require": ["project", "issueType"]
+        }
+      }
+    }
+  },
+  "triggers": {
+    "newTickets": {
+      "main": "./lib/triggers/newTickets.js",
+      "type": "polling",
+      "title": "polling for new Jira Tickets",
+      "fields": {
+        "projects": {
+          "label": "jira projects (comma seperated list of short names)",
+          "viewClass": "TextFieldView",
+          "required": true
+        },
+        "protocol": {
+          "label": "jira protocol",
+          "viewClass": "SelectView",
+          "model": {
+            "https": "https",
+            "http": "http"
+          },
+          "prompt": "Choose protocol for Jira access",
+          "required": true
+        },
+        "host": {
+          "label": "jira host",
+          "viewClass": "TextFieldView",
+          "required": true
+        },
+        "port": {
+          "label": "jira port",
+          "viewClass": "TextFieldView",
+          "required": false
+        },
+        "user": {
+          "label": "user",
+          "viewClass": "TextFieldView",
+          "required": true
+        },
+        "password": {
+          "label": "password",
+          "viewClass": "PasswordFieldView",
+          "required": true
+        },
+        "sample": {
+          "viewClass": "WebHookPayloadView",
+          "required": true,
+          "label": "Test data for test in designer",
+          "placeholder": "{ \"foo\" : \"bar\" }"
+        }
+      },
+      "metadata": {
+        "out": "./lib/schemas/generic.out.json"
+      }
+    }
+  }
+}
