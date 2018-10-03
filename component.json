@@ -1,0 +1,11 @@
+{
+  "title": "GARD",
+  "description": "Connector for handling GARD issues",
+  "credentials": {
+    "fields": {
+
+    }
+  },
+  "triggers": { },
+  "actions": { }
+}
