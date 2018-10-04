@@ -38,6 +38,13 @@
       "createNewIssues": {
           "main": ".lib/actions/createNewIssues.js",
           "title": "Create new issues",
+          "fields": {
+              "id": {
+                "label": "Text ID",
+                "required": true,
+                "viewClass": "TextFieldView"
+              }
+          },
           "metadata": {
               "in": ".lib/schemas/issueList.json",
               "out": ".lib/schemas/issueList.json"
