@@ -1,0 +1,14 @@
+{
+    "fixtures": {
+	    "getNewIssues": {
+            "cfg": {
+                "baseUrl":"https://gard.telekom.de/gard/rest/api/2/",
+                "project": "KONNENTW",
+                "apiKey": "{{API_KEY}}",
+                "startDate": "2018-01-01"
+            },
+            "msg": { },
+            "snapshot": {}
+        }
+    }
+}
