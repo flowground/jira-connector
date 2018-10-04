@@ -3,9 +3,41 @@
   "description": "Connector for handling GARD issues",
   "credentials": {
     "fields": {
-
+        "host": {
+            "label": "Host",
+            "viewClass": "TextFieldView",
+            "required": true
+        },
+        "project": {
+            "label": "Project",
+            "viewClass": "TextFieldView",
+            "required": true
+        },
+        "apiKey": {
+            "label": "API Key",
+            "viewClass": "TextFieldView",
+            "required": true
+        }
     }
   },
-  "triggers": { },
+  "triggers": { 
+      "getNewIssues": {
+          "main": ".lib/triggers/getNewIssues.js",
+          "type": "polling",
+          "title": "Get New Issues",
+          "fields": {
+            "startDate": {
+                "label": "Select Stat Date",
+                "required": true,
+                "viewClass": "TextFieldView",
+                "placeholder": "MM-DD-YYYY",
+                "model": "*"
+            }
+          },
+          "metadata": {
+              "out": "./lib/schemas/issuesList.json"
+          }
+      }
+  },
   "actions": { }
 }
