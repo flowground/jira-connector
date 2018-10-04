@@ -13,8 +13,8 @@
         "elasticio-node": "0.0.8",
         "elasticio-sailor-nodejs": "^2.2.1",
         "q": "^1.5.1",
-    },
-    "devDependencies": {
+        "request": "2.76.0",
+        "request-promise": "4.1.1"
     },
     "engines": {
         "node": "^8.4.0",
@@ -22,5 +22,4 @@
     },
     "author": "Endava",
     "license": "ISC"
-
 }

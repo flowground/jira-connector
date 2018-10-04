@@ -3,13 +3,8 @@
   "description": "Connector for handling GARD issues",
   "credentials": {
     "fields": {
-        "host": {
-            "label": "Host",
-            "viewClass": "TextFieldView",
-            "required": true
-        },
-        "project": {
-            "label": "Project",
+        "baseUrl": {
+            "label": "Base URL",
             "viewClass": "TextFieldView",
             "required": true
         },
@@ -30,7 +25,7 @@
                 "label": "Select Stat Date",
                 "required": true,
                 "viewClass": "TextFieldView",
-                "placeholder": "MM-DD-YYYY",
+                "placeholder": "YYYY-MM-DD",
                 "model": "*"
             }
           },
@@ -39,5 +34,14 @@
           }
       }
   },
-  "actions": { }
+  "actions": { 
+      "createNewIssues": {
+          "main": ".lib/actions/createNewIssues.js",
+          "title": "Create new issues",
+          "metadata": {
+              "in": ".lib/schemas/issueList.json",
+              "out": ".lib/schemas/issueList.json"
+          }
+      }
+  }
 }
