@@ -30,7 +30,7 @@
             }
           },
           "metadata": {
-              "out": "./lib/schemas/issuesList.json"
+              "out": "./lib/schemas/issue.json"
           }
       }
   },
