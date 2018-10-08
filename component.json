@@ -4,7 +4,7 @@
   "credentials": {
     "fields": {
         "baseUrl": {
-            "label": "Base URL",
+            "label": "Base URL for your GARD/JIRA instance:",
             "viewClass": "TextFieldView",
             "required": true
         },
@@ -21,11 +21,19 @@
           "type": "polling",
           "title": "Get New Issues",
           "fields": {
-            "startDate": {
-                "label": "Select Stat Date",
+            "projects": {
+                "label": "Project codes:",
+                "required": "true",
+                "viewClass": "TextFieldViewWithNote",
+                "note": "Please enter comma separated project codes",
+                "model": "*"
+            },
+            "startDateTime": {
+                "label": "Issues created since:",
                 "required": true,
-                "viewClass": "TextFieldView",
-                "placeholder": "YYYY-MM-DD",
+                "viewClass": "TextFieldViewWithNote",
+                "placeholder": "yyyy-mm-dd hh:mm",
+                "note": "Please use <code><b>yyyy-mm-dd hh:mm</b></code> format and use the same timezone as the one configured in JIRA.",
                 "model": "*"
             }
           },

@@ -3,13 +3,13 @@
 	    "getNewIssues": {
             "cfg": {
                 "baseUrl":"https://gard.telekom.de/gard/rest/api/2",
-                "project": "KONNENTW",
+                "projects": "KONNENTW",
                 "apiKey": "{{API_KEY}}",
-                "lastCreatedIssueId": "745344",
-                "label": "to-otrs"
+                "startDateTime": "2018-05-01",
+                "labels": "",
+                "exclLabels": ""
             },
-            "msg": {
-             },
+            "msg": { },
             "snapshot": {
             }
         }
