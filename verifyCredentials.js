@@ -1,15 +1,18 @@
 "use strict";
 const request = require('request-promise');
+const JiraConnector = require('./lib/services/jiraConnector');
+
 module.exports = verify;
 
-const API_BASE_URI = '';
 
 /**
- * Executes the verification logic by sending a simple to the Petstore API using the provided apiKey.
- * If the request succeeds, we can assume that the apiKey is valid. Otherwise it is not valid.
+ * Executes an unfiltered search
  *
  * @param credentials object
- *
- * @returns
+ * @returns Promise
  */
-function verify(credentials) { }
+function verify(credentials) { 
+
+    const jira = new JiraConnector(credentials.baseUrl, credentials.apiKey);
+    return jira.request('GET', '/search', {maxResults: 0});
+}
