@@ -14,5 +14,5 @@ module.exports = verify;
 function verify(credentials) { 
 
     const jira = new JiraConnector(credentials.baseUrl, credentials.apiKey);
-    return jira.request('GET', '/search', {maxResuts: 0});
+    return jira.request('GET', '/search', {maxResults: 0});
 }
