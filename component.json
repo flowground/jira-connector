@@ -1,10 +1,10 @@
 {
-  "title": "GARD",
-  "description": "Connector for handling GARD issues",
+  "title": "JIRA",
+  "description": "Connector for handling JIRA issues",
   "credentials": {
     "fields": {
         "baseUrl": {
-            "label": "Base URL for your GARD/JIRA instance:",
+            "label": "Base URL for your JIRA instance:",
             "viewClass": "TextFieldView",
             "required": true
         },
