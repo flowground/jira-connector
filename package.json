@@ -1,14 +1,12 @@
 {
-    "name": "gard-connector",
+    "name": "eio.jira",
     "version": "1.0.0",
-    "description": "GARD connector",
+    "description": "Jira connector for elastic.io",
     "main": "component.json",
     "directories": {
         "lib": "lib"
     },
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
+    "scripts": {},
     "dependencies": {
         "elasticio-node": "0.0.8",
         "elasticio-sailor-nodejs": "^2.2.1",
