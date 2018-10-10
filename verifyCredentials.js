@@ -1,5 +1,5 @@
 "use strict";
-const JiraConnector = require('./lib/services/jiraConnector');
+const JiraConnector = require('./lib/services/JiraConnector');
 
 module.exports = verify;
 
@@ -10,7 +10,9 @@ module.exports = verify;
  * @param credentials object
  * @returns Promise
  */
+console.log('verify credentials loaded.');
 function verify(credentials) {
+    console.log('verifying credentials.....');
     const jira = new JiraConnector(credentials);
     return jira.request('GET', '/search', {maxResults: 0}).then(() => console.log('verify cred success')).catch((err) => {
         console.log('verify credentials error!');
