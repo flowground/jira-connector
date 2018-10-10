@@ -1,16 +1,37 @@
 {
     "fixtures": {
-	    "getNewIssues": {
+        "getNewIssues": {
             "cfg": {
-                "baseUrl":"https://gard.telekom.de/gard/rest/api/2",
+                "baseUrl": "https://gard.telekom.de/gard/rest/api/2",
                 "projects": "KONNENTW",
                 "apiKey": "{{API_KEY}}",
                 "startDateTime": "2018-05-01",
                 "labels": "",
                 "exclLabels": ""
             },
-            "msg": { },
+            "msg": {},
             "snapshot": {
+            }
+        },
+        "createIssue": {
+            "cfg": {
+                "baseUrl": "https://gard.telekom.de/gard/rest/api/2",
+                "project": "KONNENTW",
+                "apiKey": "{{API_KEY}}"
+            },
+            "msg": {
+                "body": {
+                    "fields": {
+                        "project": {
+                            "key": "KONNENTW"
+                        },
+                        "summary": "REST Test",
+                        "description": "Creating of an issue using project keys and issue type names using the REST API",
+                        "issuetype": {
+                            "name": "User Story"
+                        }
+                    }
+                }
             }
         }
     }

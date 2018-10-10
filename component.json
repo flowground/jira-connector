@@ -5,49 +5,50 @@
     "fields": {
         "baseUrl": {
             "label": "Base URL for your Jira instance:",
-            "viewClass": "TextFieldWithNoteView",
+            "viewClass": "TextFieldView",
             "required": true
         },
-        "apiKey": {
-            "label": "API Key",
-            "viewClass": "TextFieldWithNoteView",
+        "username": {
+            "label": "Username:",
+            "viewClass": "TextFieldView",
+            "required": true
+        },
+        "password": {
+            "label": "Password:",
+            "viewClass": "TextFieldView",
             "required": true
         }
     }
   },
   "triggers": { 
       "getNewIssues": {
-          "main": ".lib/triggers/getNewIssues.js",
+          "main": "./lib/triggers/getNewIssues.js",
           "type": "polling",
           "title": "Get New Issues",
           "fields": {
             "projects": {
                 "label": "Project codes:",
-                "required": true,
+                "required": "true",
                 "viewClass": "TextFieldWithNoteView",
-                "note": "Please enter comma separated project codes",
-                "model": "*"
+                "note": "Please enter comma separated project codes"
             },
             "startDateTime": {
                 "label": "Issues created since:",
                 "required": true,
                 "viewClass": "TextFieldWithNoteView",
                 "placeholder": "yyyy-mm-dd hh:mm",
-                "note": "Please use <code><b>yyyy-mm-dd hh:mm</b></code> format and use the same timezone as the one configured in JIRA.",
-                "model": "*"
+                "note": "Please use <code><b>yyyy-mm-dd hh:mm</b></code> format and use the same timezone as the one configured in JIRA."
             },
               "labels": {
                   "label": "Retrieve issues having at least one of these labels:",
                   "viewClass": "TextFieldWithNoteView",
-                  "note": "Please enter comma separated labels",
-                  "model": "*"
+                  "note": "Please enter comma separated labels"
               },
               "exclLabels": {
                   "label": "Exclude issues having one of these labels:",
                   "viewClass": "TextFieldWithNoteView",
-                  "note": "Please enter comma separated excluded labels",
-                  "model": "*"
-              }
+                  "note": "Please enter comma separated excluded labels"
+            }
           },
           "metadata": {
               "out": "./lib/schemas/issue.out.json"
@@ -55,18 +56,12 @@
       }
   },
   "actions": { 
-      "createNewIssues": {
-          "main": "./lib/actions/createNewIssues.js",
-          "title": "Create new issues",
-          "fields": {
-              "id": {
-                "label": "Text ID",
-                "required": true,
-                "viewClass": "TextFieldView"
-              }
-          },
+      "createIssue": {
+          "main": "./lib/actions/createIssue.js",
+          "title": "Create Issue",
           "metadata": {
-              "in": ".lib/schemas/issue.in.json"
+              "in": "./lib/schemas/issue.in.json",
+              "out": "./lib/schemas/issue.out.json"
           }
       }
   }
