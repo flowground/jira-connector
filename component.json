@@ -1,61 +1,54 @@
 {
-  "title": "JIRA",
-  "description": "Connector for handling JIRA issues",
-  "credentials": {
-    "fields": {
-        "baseUrl": {
-            "label": "Base URL for your JIRA instance:",
-            "viewClass": "TextFieldView",
-            "required": true
-        },
-        "apiKey": {
-            "label": "API Key",
-            "viewClass": "TextFieldView",
-            "required": true
+    "title": "JIRA",
+    "description": "Connector for handling JIRA issues",
+    "credentials": {
+        "fields": {
+            "baseUrl": {
+                "label": "Base URL for your JIRA instance:",
+                "viewClass": "TextFieldView",
+                "required": true
+            },
+            "apiKey": {
+                "label": "API Key",
+                "viewClass": "TextFieldView",
+                "required": true
+            }
+        }
+    },
+    "triggers": {
+        "getNewIssues": {
+            "main": ".lib/triggers/getNewIssues.js",
+            "type": "polling",
+            "title": "Get New Issues",
+            "fields": {
+                "projects": {
+                    "label": "Project codes:",
+                    "required": "true",
+                    "viewClass": "TextFieldViewWithNote",
+                    "note": "Please enter comma separated project codes",
+                    "model": "*"
+                },
+                "startDateTime": {
+                    "label": "Issues created since:",
+                    "required": true,
+                    "viewClass": "TextFieldViewWithNote",
+                    "placeholder": "yyyy-mm-dd hh:mm",
+                    "note": "Please use <code><b>yyyy-mm-dd hh:mm</b></code> format and use the same timezone as the one configured in JIRA.",
+                    "model": "*"
+                }
+            },
+            "metadata": {
+                "out": "./lib/schemas/issue.json"
+            }
+        }
+    },
+    "actions": {
+        "createIssue": {
+            "main": ".lib/actions/createIssue.js",
+            "title": "Create new issues",
+            "metadata": {
+                "in": ".lib/schemas/issue.in.json"
+            }
         }
     }
-  },
-  "triggers": { 
-      "getNewIssues": {
-          "main": ".lib/triggers/getNewIssues.js",
-          "type": "polling",
-          "title": "Get New Issues",
-          "fields": {
-            "projects": {
-                "label": "Project codes:",
-                "required": "true",
-                "viewClass": "TextFieldViewWithNote",
-                "note": "Please enter comma separated project codes",
-                "model": "*"
-            },
-            "startDateTime": {
-                "label": "Issues created since:",
-                "required": true,
-                "viewClass": "TextFieldViewWithNote",
-                "placeholder": "yyyy-mm-dd hh:mm",
-                "note": "Please use <code><b>yyyy-mm-dd hh:mm</b></code> format and use the same timezone as the one configured in JIRA.",
-                "model": "*"
-            }
-          },
-          "metadata": {
-              "out": "./lib/schemas/issue.json"
-          }
-      }
-  },
-  "actions": { 
-      "createIssue": {
-          "main": ".lib/actions/createIssue.js",
-          "title": "Create new issues",
-          "fields": {
-              "project": {
-                "label": "Project Name",
-                "required": true,
-                "viewClass": "TextFieldView"
-              }
-          },
-          "metadata": {
-              "in": ".lib/schemas/issue.in.json"
-          }
-      }
-  }
 }
