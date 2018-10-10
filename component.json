@@ -29,13 +29,13 @@
             "projects": {
                 "label": "Project codes:",
                 "required": "true",
-                "viewClass": "TextFieldViewWithNote",
+                "viewClass": "TextFieldWithNoteView",
                 "note": "Please enter comma separated project codes"
             },
             "startDateTime": {
                 "label": "Issues created since:",
                 "required": true,
-                "viewClass": "TextFieldViewWithNote",
+                "viewClass": "TextFieldWithNoteView",
                 "placeholder": "yyyy-mm-dd hh:mm",
                 "note": "Please use <code><b>yyyy-mm-dd hh:mm</b></code> format and use the same timezone as the one configured in JIRA."
             },
