@@ -9,12 +9,12 @@
             "required": true
         },
         "username": {
-            "label": "Username",
+            "label": "Username:",
             "viewClass": "TextFieldView",
             "required": true
         },
         "password": {
-            "label": "Password",
+            "label": "Password:",
             "viewClass": "TextFieldView",
             "required": true
         }
