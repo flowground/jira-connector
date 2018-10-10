@@ -1,10 +1,10 @@
 {
-  "title": "JIRA",
-  "description": "Connector for handling JIRA issues",
+  "title": "Jira",
+  "description": "Connector for handling Jira issues",
   "credentials": {
     "fields": {
         "baseUrl": {
-            "label": "Base URL for your JIRA instance:",
+            "label": "Base URL for your Jira instance:",
             "viewClass": "TextFieldView",
             "required": true
         },
@@ -24,21 +24,35 @@
             "projects": {
                 "label": "Project codes:",
                 "required": "true",
-                "viewClass": "TextFieldViewWithNote",
+                "viewClass": "TextFieldView",
                 "note": "Please enter comma separated project codes",
                 "model": "*"
             },
             "startDateTime": {
                 "label": "Issues created since:",
                 "required": true,
-                "viewClass": "TextFieldViewWithNote",
+                "viewClass": "TextFieldView",
                 "placeholder": "yyyy-mm-dd hh:mm",
                 "note": "Please use <code><b>yyyy-mm-dd hh:mm</b></code> format and use the same timezone as the one configured in JIRA.",
                 "model": "*"
-            }
+            },
+              "labels": {
+                  "label": "Labels used to determine issues that should be retrieved:",
+                  "required": "true",
+                  "viewClass": "TextFieldView",
+                  "note": "Please enter comma separated labels",
+                  "model": "*"
+              },
+              "exclLabels": {
+                  "label": "Labels used to determine issues that should be excluded:",
+                  "required": "true",
+                  "viewClass": "TextFieldView",
+                  "note": "Please enter comma separated excluded labels",
+                  "model": "*"
+              }
           },
           "metadata": {
-              "out": "./lib/schemas/issue.json"
+              "out": "./lib/schemas/issue.out.json"
           }
       }
   },
@@ -54,8 +68,7 @@
               }
           },
           "metadata": {
-              "in": ".lib/schemas/issueList.json",
-              "out": ".lib/schemas/issueList.json"
+              "in": ".lib/schemas/issue.in.json"
           }
       }
   }
