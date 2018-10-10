@@ -5,12 +5,12 @@
     "fields": {
         "baseUrl": {
             "label": "Base URL for your Jira instance:",
-            "viewClass": "TextFieldView",
+            "viewClass": "TextFieldWithNoteView",
             "required": true
         },
         "apiKey": {
             "label": "API Key",
-            "viewClass": "TextFieldView",
+            "viewClass": "TextFieldWithNoteView",
             "required": true
         }
     }
@@ -23,30 +23,28 @@
           "fields": {
             "projects": {
                 "label": "Project codes:",
-                "required": "true",
-                "viewClass": "TextFieldView",
+                "required": true,
+                "viewClass": "TextFieldWithNoteView",
                 "note": "Please enter comma separated project codes",
                 "model": "*"
             },
             "startDateTime": {
                 "label": "Issues created since:",
                 "required": true,
-                "viewClass": "TextFieldView",
+                "viewClass": "TextFieldWithNoteView",
                 "placeholder": "yyyy-mm-dd hh:mm",
                 "note": "Please use <code><b>yyyy-mm-dd hh:mm</b></code> format and use the same timezone as the one configured in JIRA.",
                 "model": "*"
             },
               "labels": {
-                  "label": "Labels used to determine issues that should be retrieved:",
-                  "required": "true",
-                  "viewClass": "TextFieldView",
+                  "label": "Retrieve issues having at least one of these labels:",
+                  "viewClass": "TextFieldWithNoteView",
                   "note": "Please enter comma separated labels",
                   "model": "*"
               },
               "exclLabels": {
-                  "label": "Labels used to determine issues that should be excluded:",
-                  "required": "true",
-                  "viewClass": "TextFieldView",
+                  "label": "Exclude issues having one of these labels:",
+                  "viewClass": "TextFieldWithNoteView",
                   "note": "Please enter comma separated excluded labels",
                   "model": "*"
               }
