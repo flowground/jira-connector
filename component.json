@@ -54,8 +54,8 @@
               }
           },
           "metadata": {
-              "in": ".lib/schemas/issueList.json",
-              "out": ".lib/schemas/issueList.json"
+              "in": ".lib/schemas/issue.json",
+              "out": ".lib/schemas/issue.json"
           }
       }
   }
