@@ -11,8 +11,8 @@ module.exports = verify;
  * @param credentials object
  * @returns Promise
  */
-function verify(credentials) { 
+function verify(credentials) {
 
-    const jira = new JiraConnector(credentials.baseUrl, credentials.apiKey);
+    const jira = new JiraConnector(credentials);
     return jira.request('GET', '/search', {maxResults: 0});
 }

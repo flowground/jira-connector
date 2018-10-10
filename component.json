@@ -56,7 +56,7 @@
   },
   "actions": { 
       "createNewIssues": {
-          "main": ".lib/actions/createNewIssues.js",
+          "main": "./lib/actions/createNewIssues.js",
           "title": "Create new issues",
           "fields": {
               "id": {
