@@ -8,8 +8,13 @@
             "viewClass": "TextFieldView",
             "required": true
         },
-        "apiKey": {
-            "label": "API Key",
+        "username": {
+            "label": "Username",
+            "viewClass": "TextFieldView",
+            "required": true
+        },
+        "password": {
+            "label": "Password",
             "viewClass": "TextFieldView",
             "required": true
         }
