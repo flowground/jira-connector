@@ -22,7 +22,7 @@
   },
   "triggers": { 
       "getNewIssues": {
-          "main": ".lib/triggers/getNewIssues.js",
+          "main": "./lib/triggers/getNewIssues.js",
           "type": "polling",
           "title": "Get New Issues",
           "fields": {
@@ -57,11 +57,11 @@
   },
   "actions": { 
       "createIssue": {
-          "main": ".lib/actions/createIssue.js",
+          "main": "./lib/actions/createIssue.js",
           "title": "Create Issue",
           "metadata": {
-              "in": ".lib/schemas/issue.in.json",
-              "out": ".lib/schemas/issue.out.json"
+              "in": "./lib/schemas/issue.in.json",
+              "out": "./lib/schemas/issue.out.json"
           }
       }
   }
