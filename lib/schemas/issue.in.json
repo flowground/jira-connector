@@ -1,0 +1,36 @@
+{
+    "type": "object",
+    "properties": {
+        "fields": {
+            "type": "object",
+            "properties": {
+                "project": {
+                    "type": "object",
+                    "properties": {
+                        "key": {
+                            "type": "string",
+                            "required": true
+                        }
+                    }
+                },
+                "summary": {
+                    "type": "string",
+                    "required": true
+                },
+                "description": {
+                    "type": "string",
+                    "required": true
+                },
+                "issuetype": {
+                    "type": "object",
+                    "properties": {
+                        "name": {
+                            "type": "string",
+                            "required": true
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

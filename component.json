@@ -43,19 +43,18 @@
       }
   },
   "actions": { 
-      "createNewIssues": {
-          "main": ".lib/actions/createNewIssues.js",
+      "createIssue": {
+          "main": ".lib/actions/createIssue.js",
           "title": "Create new issues",
           "fields": {
-              "id": {
-                "label": "Text ID",
+              "project": {
+                "label": "Project Name",
                 "required": true,
                 "viewClass": "TextFieldView"
               }
           },
           "metadata": {
-              "in": ".lib/schemas/issueList.json",
-              "out": ".lib/schemas/issueList.json"
+              "in": ".lib/schemas/issue.in.json"
           }
       }
   }
