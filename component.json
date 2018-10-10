@@ -44,7 +44,7 @@
   },
   "actions": { 
       "createNewIssues": {
-          "main": ".lib/actions/createNewIssues.js",
+          "main": "./lib/actions/createNewIssues.js",
           "title": "Create new issues",
           "fields": {
               "id": {
@@ -54,8 +54,8 @@
               }
           },
           "metadata": {
-              "in": ".lib/schemas/issue.json",
-              "out": ".lib/schemas/issue.json"
+              "in": "./lib/schemas/issue.json",
+              "out": "./lib/schemas/issue.json"
           }
       }
   }
