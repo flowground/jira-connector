@@ -33,6 +33,23 @@
                     }
                 }
             }
+        },
+        "updateIssue": {
+            "cfg": {
+                "baseUrl": "https://gard.telekom.de/gard/rest/api/2",
+                "project": "KONNENTW",
+                "apiKey": "{{API_KEY}}"
+            },
+            "msg": {
+                "body": {
+                    "issueId": "765886",
+                    "updateData": {
+                        "fields": {
+                            "assignee":{"name":"rares.gaia@endava.com"}
+                        }
+                    }
+                }
+            }
         }
     }
 }
