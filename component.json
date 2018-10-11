@@ -57,38 +57,38 @@
             "metadata": {
                 "out": "./lib/schemas/issue.out.json"
             }
-        }
-    },
-    "getUpdatedIssues": {
-        "main": "./lib/triggers/getUpdatedIssues.js",
-        "type": "polling",
-        "title": "Get Updated Issues",
-        "fields": {
-            "projects": {
-                "label": "Project codes:",
-                "viewClass": "TextFieldWithNoteView",
-                "note": "Please enter comma separated project codes"
-            },
-            "startDateTime": {
-                "label": "Issues updated since:",
-                "required": true,
-                "viewClass": "TextFieldWithNoteView",
-                "placeholder": "yyyy-mm-dd hh:mm",
-                "note": "Please use <code><b>yyyy-mm-dd hh:mm</b></code> format and use the same timezone as the one configured in JIRA."
-            },
-            "labels": {
-                "label": "Retrieve updated issues having at least one of these labels:",
-                "viewClass": "TextFieldWithNoteView",
-                "note": "Please enter comma separated labels"
-            },
-            "exclLabels": {
-                "label": "Exclude updated issues having one of these labels:",
-                "viewClass": "TextFieldWithNoteView",
-                "note": "Please enter comma separated excluded labels"
-            }
         },
-        "metadata": {
-            "out": "./lib/schemas/issue.out.json"
+        "getUpdatedIssues": {
+            "main": "./lib/triggers/getUpdatedIssues.js",
+            "type": "polling",
+            "title": "Get Updated Issues",
+            "fields": {
+                "projects": {
+                    "label": "Project codes:",
+                    "viewClass": "TextFieldWithNoteView",
+                    "note": "Please enter comma separated project codes"
+                },
+                "startDateTime": {
+                    "label": "Issues updated since:",
+                    "required": true,
+                    "viewClass": "TextFieldWithNoteView",
+                    "placeholder": "yyyy-mm-dd hh:mm",
+                    "note": "Please use <code><b>yyyy-mm-dd hh:mm</b></code> format and use the same timezone as the one configured in JIRA."
+                },
+                "labels": {
+                    "label": "Retrieve updated issues having at least one of these labels:",
+                    "viewClass": "TextFieldWithNoteView",
+                    "note": "Please enter comma separated labels"
+                },
+                "exclLabels": {
+                    "label": "Exclude updated issues having one of these labels:",
+                    "viewClass": "TextFieldWithNoteView",
+                    "note": "Please enter comma separated excluded labels"
+                }
+            },
+            "metadata": {
+                "out": "./lib/schemas/issue.out.json"
+            }
         }
     },
     "actions": {
