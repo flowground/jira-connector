@@ -1,68 +1,72 @@
 {
-  "title": "Jira",
-  "description": "Connector for handling Jira issues",
-  "credentials": {
-    "fields": {
-        "baseUrl": {
-            "label": "Base URL for your Jira instance:",
-            "viewClass": "TextFieldView",
-            "required": true
-        },
-        "username": {
-            "label": "Username:",
-            "viewClass": "TextFieldView",
-            "required": true
-        },
-        "password": {
-            "label": "Password:",
-            "viewClass": "TextFieldView",
-            "required": true
+    "title": "Jira",
+    "description": "Connector for handling Jira issues",
+    "credentials": {
+        "fields": {
+            "baseUrl": {
+                "label": "Base URL for your Jira instance:",
+                "viewClass": "TextFieldView",
+                "required": true
+            },
+            "username": {
+                "label": "Username:",
+                "viewClass": "TextFieldView",
+                "required": true
+            },
+            "password": {
+                "label": "Password:",
+                "viewClass": "TextFieldView",
+                "required": true
+            }
+        }
+    },
+    "triggers": {
+        "getNewIssues": {
+            "main": "./lib/triggers/getNewIssues.js",
+            "type": "polling",
+            "title": "Get New Issues",
+            "fields": {
+                "startDateTime": {
+                    "label": "Issues created since:",
+                    "required": true,
+                    "viewClass": "TextFieldWithNoteView",
+                    "placeholder": "yyyy-mm-dd hh:mm",
+                    "note": "Please use <code><b>yyyy-mm-dd hh:mm</b></code> format and use the same timezone as the one configured in JIRA."
+                },
+                "projects": {
+                    "label": "Project codes:",
+                    "viewClass": "TextFieldWithNoteView",
+                    "note": "Separate project codes with a single comma. Do not enclose in quotes."
+                },
+                "labels": {
+                    "label": "Retrieve issues having at least one of these labels:",
+                    "viewClass": "TextFieldWithNoteView",
+                    "note": "Separate labels with a single comma. Do not enclose in quotes."
+                },
+                "exclLabels": {
+                    "label": "Exclude issues having one of these labels:",
+                    "viewClass": "TextFieldWithNoteView",
+                    "note": "Separate labels with a single comma. Do not enclose in quotes."
+                },
+                "maxResults": {
+                    "label": "Maximum number of issues to retrieve:",
+                    "viewClass": "TextFieldWithNoteView",
+                    "note": "Default is 50. If there are more new issues than this, they will be retrieved the next time the trigger is run."
+                }
+            },
+            "metadata": {
+                "out": "./lib/schemas/issue.out.json"
+            }
+        }
+    },
+    "actions": {
+        "createIssue": {
+            "main": "./lib/actions/createIssue.js",
+            "title": "Create Issue",
+            "metadata": {
+                "in": "./lib/schemas/issue.in.json",
+                "out": "./lib/schemas/issue.out.json"
+            }
         }
     }
-  },
-  "triggers": { 
-      "getNewIssues": {
-          "main": "./lib/triggers/getNewIssues.js",
-          "type": "polling",
-          "title": "Get New Issues",
-          "fields": {
-            "projects": {
-                "label": "Project codes:",
-                "required": "true",
-                "viewClass": "TextFieldWithNoteView",
-                "note": "Please enter comma separated project codes"
-            },
-            "startDateTime": {
-                "label": "Issues created since:",
-                "required": true,
-                "viewClass": "TextFieldWithNoteView",
-                "placeholder": "yyyy-mm-dd hh:mm",
-                "note": "Please use <code><b>yyyy-mm-dd hh:mm</b></code> format and use the same timezone as the one configured in JIRA."
-            },
-              "labels": {
-                  "label": "Retrieve issues having at least one of these labels:",
-                  "viewClass": "TextFieldWithNoteView",
-                  "note": "Please enter comma separated labels"
-              },
-              "exclLabels": {
-                  "label": "Exclude issues having one of these labels:",
-                  "viewClass": "TextFieldWithNoteView",
-                  "note": "Please enter comma separated excluded labels"
-            }
-          },
-          "metadata": {
-              "out": "./lib/schemas/issue.out.json"
-          }
-      }
-  },
-  "actions": { 
-      "createIssue": {
-          "main": "./lib/actions/createIssue.js",
-          "title": "Create Issue",
-          "metadata": {
-              "in": "./lib/schemas/issue.in.json",
-              "out": "./lib/schemas/issue.out.json"
-          }
-      }
-  }
 }
