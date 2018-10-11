@@ -5,21 +5,18 @@
         "fields": {
             "baseUrl": {
                 "label": "Base URL for your Jira instance:",
-                "viewClass": "TextFieldWithNoteView",
-                "required": true,
-                "note": "Base url format should be: <code><b>http://<i>hostname<i>/rest/<i>api-name</i>/<i>api-version</i></b></code>"
+                "viewClass": "TextFieldView",
+                "required": true
             },
             "username": {
                 "label": "Username:",
-                "viewClass": "TextFieldWithNoteView",
-                "required": true,
-                "note": "Please enter the login username."
+                "viewClass": "TextFieldView",
+                "required": true
             },
             "password": {
                 "label": "Password:",
-                "viewClass": "TextFieldWithNoteView",
-                "required": true,
-                "note": "Please enter the login password."
+                "viewClass": "TextFieldView",
+                "required": true
             }
         }
     },
@@ -29,11 +26,6 @@
             "type": "polling",
             "title": "Get New Issues",
             "fields": {
-                "projects": {
-                    "label": "Project codes:",
-                    "viewClass": "TextFieldWithNoteView",
-                    "note": "Please enter comma separated project codes"
-                },
                 "startDateTime": {
                     "label": "Issues created since:",
                     "required": true,
@@ -41,61 +33,71 @@
                     "placeholder": "yyyy-mm-dd hh:mm",
                     "note": "Please use <code><b>yyyy-mm-dd hh:mm</b></code> format and use the same timezone as the one configured in JIRA."
                 },
+                "projects": {
+                    "label": "Project codes:",
+                    "viewClass": "TextFieldWithNoteView",
+                    "note": "Separate project codes with a single comma. Do not enclose in quotes."
+                },
                 "labels": {
                     "label": "Retrieve issues having at least one of these labels:",
                     "viewClass": "TextFieldWithNoteView",
-                    "note": "Please enter comma separated labels"
+                    "note": "Separate labels with a single comma. Do not enclose in quotes."
                 },
                 "exclLabels": {
                     "label": "Exclude issues having one of these labels:",
                     "viewClass": "TextFieldWithNoteView",
-                    "note": "Please enter comma separated excluded labels"
+                    "note": "Separate labels with a single comma. Do not enclose in quotes."
+                },
+                "maxResults": {
+                    "label": "Maximum number of issues to retrieve:",
+                    "viewClass": "TextFieldWithNoteView",
+                    "note": "Default is 50. If there are more new issues than this, they will be retrieved the next time the trigger is run."
                 }
             },
             "metadata": {
                 "out": "./lib/schemas/issue.out.json"
             }
-        },
-        "getUpdatedIssues": {
-            "main": "./lib/triggers/getUpdatedIssues.js",
-            "type": "polling",
-            "title": "Get Updated Issues",
-            "fields": {
-                "projects": {
-                    "label": "Project codes:",
-                    "viewClass": "TextFieldWithNoteView",
-                    "note": "Please enter comma separated project codes"
-                },
-                "startDateTime": {
-                    "label": "Issues updated since:",
-                    "required": true,
-                    "viewClass": "TextFieldWithNoteView",
-                    "placeholder": "yyyy-mm-dd hh:mm",
-                    "note": "Please use <code><b>yyyy-mm-dd hh:mm</b></code> format and use the same timezone as the one configured in JIRA."
-                },
-                "labels": {
-                    "label": "Retrieve updated issues having at least one of these labels:",
-                    "viewClass": "TextFieldWithNoteView",
-                    "note": "Please enter comma separated labels"
-                },
-                "exclLabels": {
-                    "label": "Exclude updated issues having one of these labels:",
-                    "viewClass": "TextFieldWithNoteView",
-                    "note": "Please enter comma separated excluded labels"
-                }
+        }
+    },
+    "getUpdatedIssues": {
+        "main": "./lib/triggers/getUpdatedIssues.js",
+        "type": "polling",
+        "title": "Get Updated Issues",
+        "fields": {
+            "projects": {
+                "label": "Project codes:",
+                "viewClass": "TextFieldWithNoteView",
+                "note": "Please enter comma separated project codes"
             },
-            "metadata": {
-                "out": "./lib/schemas/issue.out.json"
+            "startDateTime": {
+                "label": "Issues updated since:",
+                "required": true,
+                "viewClass": "TextFieldWithNoteView",
+                "placeholder": "yyyy-mm-dd hh:mm",
+                "note": "Please use <code><b>yyyy-mm-dd hh:mm</b></code> format and use the same timezone as the one configured in JIRA."
+            },
+            "labels": {
+                "label": "Retrieve updated issues having at least one of these labels:",
+                "viewClass": "TextFieldWithNoteView",
+                "note": "Please enter comma separated labels"
+            },
+            "exclLabels": {
+                "label": "Exclude updated issues having one of these labels:",
+                "viewClass": "TextFieldWithNoteView",
+                "note": "Please enter comma separated excluded labels"
             }
         },
-        "actions": {
-            "createIssue": {
-                "main": "./lib/actions/createIssue.js",
-                "title": "Create Issue",
-                "metadata": {
-                    "in": "./lib/schemas/issue.in.json",
-                    "out": "./lib/schemas/issue.out.json"
-                }
+        "metadata": {
+            "out": "./lib/schemas/issue.out.json"
+        }
+    },
+    "actions": {
+        "createIssue": {
+            "main": "./lib/actions/createIssue.js",
+            "title": "Create Issue",
+            "metadata": {
+                "in": "./lib/schemas/issue.in.json",
+                "out": "./lib/schemas/issue.out.json"
             }
         }
     }
