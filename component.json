@@ -5,21 +5,18 @@
         "fields": {
             "baseUrl": {
                 "label": "Base URL for your Jira instance:",
-                "viewClass": "TextFieldWithNoteView",
-                "required": true,
-                "note": "Base url format should be: <code><b>http://<i>hostname<i>/rest/<i>api-name</i>/<i>api-version</i></b></code>"
+                "viewClass": "TextFieldView",
+                "required": true
             },
             "username": {
                 "label": "Username:",
-                "viewClass": "TextFieldWithNoteView",
-                "required": true,
-                "note": "Please enter the login username."
+                "viewClass": "TextFieldView",
+                "required": true
             },
             "password": {
                 "label": "Password:",
-                "viewClass": "TextFieldWithNoteView",
-                "required": true,
-                "note": "Please enter the login password."
+                "viewClass": "TextFieldView",
+                "required": true
             }
         }
     },
@@ -29,11 +26,6 @@
             "type": "polling",
             "title": "Get New Issues",
             "fields": {
-                "projects": {
-                    "label": "Project codes:",
-                    "viewClass": "TextFieldWithNoteView",
-                    "note": "Please enter comma separated project codes"
-                },
                 "startDateTime": {
                     "label": "Issues created since:",
                     "required": true,
@@ -87,15 +79,15 @@
             "metadata": {
                 "out": "./lib/schemas/issue.out.json"
             }
-        },
-        "actions": {
-            "createIssue": {
-                "main": "./lib/actions/createIssue.js",
-                "title": "Create Issue",
-                "metadata": {
-                    "in": "./lib/schemas/issue.in.json",
-                    "out": "./lib/schemas/issue.out.json"
-                }
+        }
+    },
+    "actions": {
+        "createIssue": {
+            "main": "./lib/actions/createIssue.js",
+            "title": "Create Issue",
+            "metadata": {
+                "in": "./lib/schemas/issue.in.json",
+                "out": "./lib/schemas/issue.out.json"
             }
         }
     }
