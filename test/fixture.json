@@ -5,7 +5,20 @@
                 "baseUrl": "https://gard.telekom.de/gard/rest/api/2",
                 "projects": "KONNENTW",
                 "apiKey": "{{API_KEY}}",
-                "startDateTime": "2018-05-01",
+                "startDateTime": "2018-10-11",
+                "labels": "",
+                "exclLabels": ""
+            },
+            "msg": {},
+            "snapshot": {
+            }
+        },
+        "getUpdatedIssues": {
+            "cfg": {
+                "baseUrl": "https://gard.telekom.de/gard/rest/api/2",
+                "projects": "KONNENTW",
+                "apiKey": "{{API_KEY}}",
+                "startDateTime": "2018-10-11",
                 "labels": "",
                 "exclLabels": ""
             },
