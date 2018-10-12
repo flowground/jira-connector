@@ -77,15 +77,11 @@
             },
             "fields": {
                 "idField": {
-                    "label": "Issue ID field:",
-                    "viewClass": "JSONataView",
-                    "required": true
-                },
-                "output": {
-                    "label": "Output JSON:",
-                    "viewClass": "JSONataView",
+                    "label": "Issue ID field (JSONata):",
+                    "viewClass": "TextViewWithNoteView",
                     "required": true,
-                    "placeholder": "{\"issue\": %, \"input\": $}"
+                    "note": "A JSONata expression to select the issue id from the incoming data.",
+                    "placeholder": "id"
                 }
             }
         }
