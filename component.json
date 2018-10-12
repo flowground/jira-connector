@@ -74,15 +74,6 @@
             "metadata": {
                 "in": "./lib/schemas/getIssue.in.json",
                 "out": "./lib/schemas/issue.out.json"
-            },
-            "fields": {
-                "idField": {
-                    "label": "Issue ID field (JSONata):",
-                    "viewClass": "TextFieldWithNoteView",
-                    "required": true,
-                    "note": "A JSONata expression to select the issue id from the incoming data.",
-                    "placeholder": "id"
-                }
             }
         }
     }
