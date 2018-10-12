@@ -78,7 +78,7 @@
             "fields": {
                 "idField": {
                     "label": "Issue ID field:",
-                    "viewClass": "SelectPropertyView"
+                    "viewClass": "JSONataView"
                 }
             }
         }
