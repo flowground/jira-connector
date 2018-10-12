@@ -72,13 +72,13 @@
             "main": "./lib/actions/getIssue.js",
             "title": "Get Issue",
             "metadata": {
-                "in": "./lib/schemas/object.json",
-                "out": "./lib/schemas/object.json"
+                "in": "./lib/schemas/getIssue.in.json",
+                "out": "./lib/schemas/issue.out.json"
             },
             "fields": {
                 "idField": {
                     "label": "Issue ID field (JSONata):",
-                    "viewClass": "TextViewWithNoteView",
+                    "viewClass": "TextFieldWithNoteView",
                     "required": true,
                     "note": "A JSONata expression to select the issue id from the incoming data.",
                     "placeholder": "id"
