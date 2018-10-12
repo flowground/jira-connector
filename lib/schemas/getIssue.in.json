@@ -1,7 +1,7 @@
 {
     "type": "object",
     "properties": {
-        "Issue ID": {
+        "IssueId": {
             "type": "string",
             "required": true
         }
