@@ -83,7 +83,7 @@
                 },
                 "output": {
                     "label": "Output JSON:",
-                    "viewClass": "JSONataWithNoteView",
+                    "viewClass": "JSONataView",
                     "required": true,
                     "placeholder": "{\"issue\": %, \"input\": $}"
                 }
