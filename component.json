@@ -67,6 +67,20 @@
                 "in": "./lib/schemas/issue.in.json",
                 "out": "./lib/schemas/issue.out.json"
             }
+        },
+        "getIssue": {
+            "main": "./lib/actions/getIssue.js",
+            "title": "Get Issue",
+            "metadata": {
+                "in": "./lib/schemas/object.json",
+                "out": "./lib/schemas/object.json"
+            },
+            "fields": {
+                "idField": {
+                    "label": "Issue ID field:",
+                    "viewClass": "SelectPropertyView"
+                }
+            }
         }
     }
 }
