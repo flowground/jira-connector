@@ -78,7 +78,14 @@
             "fields": {
                 "idField": {
                     "label": "Issue ID field:",
-                    "viewClass": "JSONataView"
+                    "viewClass": "JSONataView",
+                    "required": true
+                },
+                "output": {
+                    "label": "Output JSON:",
+                    "viewClass": "JSONataWithNoteView",
+                    "required": true,
+                    "placeholder": "{\"issue\": %, \"input\": $}"
                 }
             }
         }
