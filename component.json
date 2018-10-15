@@ -51,6 +51,7 @@
                 "maxResults": {
                     "label": "Maximum number of issues to retrieve:",
                     "viewClass": "TextFieldWithNoteView",
+                    "default": "50",
                     "note": "Default is 50. If there are more new issues than this, they will be retrieved the next time the trigger is run."
                 }
             },
@@ -80,6 +81,14 @@
             "title": "Create Issue",
             "metadata": {
                 "in": "./lib/schemas/issue.in.json",
+                "out": "./lib/schemas/issue.out.json"
+            }
+        },
+        "getIssue": {
+            "main": "./lib/actions/getIssue.js",
+            "title": "Get Issue",
+            "metadata": {
+                "in": "./lib/schemas/getIssue.in.json",
                 "out": "./lib/schemas/issue.out.json"
             }
         }
