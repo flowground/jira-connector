@@ -1,0 +1,10 @@
+{
+    "type": "object",
+    "properties": {
+        "issueId": {
+            "type": "string",
+            "required": true,
+            "title": "Issue ID"
+        }
+    }
+}
