@@ -8,7 +8,7 @@
     },
     "scripts": {},
     "dependencies": {
-        "elasticio-node": "0.0.8",
+        "elasticio-node": "0.0.9",
         "elasticio-sailor-nodejs": "^2.2.1",
         "q": "^1.5.1",
         "request": "2.76.0",
