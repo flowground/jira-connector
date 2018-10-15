@@ -78,7 +78,7 @@
         },
         "updateIssue": {
             "main": "./lib/actions/updateIssue.js",
-            "title": "Create Issue",
+            "title": "Update Issue",
             "metadata": {
                 "in": "./lib/schemas/issue.in.json",
                 "out": "./lib/schemas/issue.out.json"
