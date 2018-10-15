@@ -33,6 +33,22 @@
                     }
                 }
             }
+        },
+        "updateIssue": {
+            "cfg": {
+                "baseUrl": "https://gard.telekom.de/gard/rest/api/2",
+                "project": "CONNDEV",
+                "username": "{{USER}}",
+                "password": "{{PASSWORD}}"
+            },
+            "msg": {
+                "body":  {
+                    "id": "CONNDEV-26",
+                    "fields": {
+                        "assignee":{"name":"rares.gaia@endava.com"}
+                    }
+                }
+            }
         }
     }
 }

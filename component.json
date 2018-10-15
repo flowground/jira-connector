@@ -67,6 +67,21 @@
             "metadata": {
                 "in": "./lib/schemas/issue.in.json",
                 "out": "./lib/schemas/issue.out.json"
+            },
+            "fields": {
+                "projects": {
+                    "label": "Project codes:",
+                    "viewClass": "TextFieldWithNoteView",
+                    "note": "Separate project codes with a single comma. Do not enclose in quotes."
+                }
+            }
+        },
+        "updateIssue": {
+            "main": "./lib/actions/updateIssue.js",
+            "title": "Update Issue",
+            "metadata": {
+                "in": "./lib/schemas/issue.in.json",
+                "out": "./lib/schemas/issue.out.json"
             }
         },
         "getIssue": {
