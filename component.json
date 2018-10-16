@@ -67,7 +67,7 @@
                 "projects": {
                     "label": "Project codes:",
                     "viewClass": "TextFieldWithNoteView",
-                    "note": "Please enter comma separated project codes"
+                    "note": "Separate project codes with a single comma. Do not enclose in quotes."
                 },
                 "startDateTime": {
                     "label": "Issues updated since:",
@@ -79,12 +79,18 @@
                 "labels": {
                     "label": "Retrieve updated issues having at least one of these labels:",
                     "viewClass": "TextFieldWithNoteView",
-                    "note": "Please enter comma separated labels"
+                    "note": "Separate project codes with a single comma. Do not enclose in quotes."
                 },
                 "exclLabels": {
                     "label": "Exclude updated issues having one of these labels:",
                     "viewClass": "TextFieldWithNoteView",
-                    "note": "Please enter comma separated excluded labels"
+                    "note": "Separate project codes with a single comma. Do not enclose in quotes."
+                },
+                "maxResults": {
+                    "label": "Maximum number of issues to retrieve:",
+                    "viewClass": "TextFieldWithNoteView",
+                    "default": "50",
+                    "note": "Default is 50. If there are more new issues than this, they will be retrieved the next time the trigger is run."
                 }
             },
             "metadata": {
