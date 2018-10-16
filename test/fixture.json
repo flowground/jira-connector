@@ -1,44 +1,52 @@
 {
     "fixtures": {
-        "getUser": {
+        "getNewIssues": {
             "cfg": {
-                "username": "{{USER}}",
-                "protocol": "https://",
-                "host": "gard.telekom.de/gard",
-                "user": "{{GARDUSER_cp}}",
-                "password": "{{PASSWORD}}"
-            }
-        },
-        "newTickets": {
-            "cfg": {
-                "jql1": "project = EIOT or project = IHUBP order by created desc",
-                "projects": "EIOT,IHUBP",
-                "protocol": "https://",
-                "host": "gard.telekom.de/gard",
-                "user": "{{GARDUSER_ihub}}",
-                "password": "{{PASSWORD}}"
+                "baseUrl": "https://gard.telekom.de/gard/rest/api/2",
+                "projects": "KONNENTW",
+                "apiKey": "{{API_KEY}}",
+                "startDateTime": "2018-05-01",
+                "labels": "",
+                "exclLabels": ""
+            },
+            "msg": {},
+            "snapshot": {
             }
         },
         "createIssue": {
             "cfg": {
-                "projects": "EIOT,IHUBP",
-                "schema": "https",
-                "host": "gard.telekom.de/gard",
-                "username": "{{USER}}",
-                "password": "{{PASSWORD}}",
-                "digest": "1234",
-
-                "project": "23028",
-                "issueType": "79",
-                "metaModel_weg": "eyJleHBhbmQiOiJwcm9qZWN0cyIsInByb2plY3RzIjpbeyJleHBhbmQiOiJpc3N1ZXR5cGVzIiwic2VsZiI6Imh0dHBzOi8vZ2FyZC50ZWxla29tLmRlL2dhcmQvcmVzdC9hcGkvMi9wcm9qZWN0LzIzMDI4IiwiaWQiOiIyMzAyOCIsImtleSI6IkVJT1QiLCJuYW1lIjoiRUlPIFRpY2tldHMiLCJhdmF0YXJVcmxzIjp7IjQ4eDQ4IjoiaHR0cHM6Ly9nYXJkLnRlbGVrb20uZGUvZ2FyZC9zZWN1cmUvcHJvamVjdGF2YXRhcj9waWQ9MjMwMjgmYXZhdGFySWQ9Mjc5NDIiLCIyNHgyNCI6Imh0dHBzOi8vZ2FyZC50ZWxla29tLmRlL2dhcmQvc2VjdXJlL3Byb2plY3RhdmF0YXI/c2l6ZT1zbWFsbCZwaWQ9MjMwMjgmYXZhdGFySWQ9Mjc5NDIiLCIxNngxNiI6Imh0dHBzOi8vZ2FyZC50ZWxla29tLmRlL2dhcmQvc2VjdXJlL3Byb2plY3RhdmF0YXI/c2l6ZT14c21hbGwmcGlkPTIzMDI4JmF2YXRhcklkPTI3OTQyIiwiMzJ4MzIiOiJodHRwczovL2dhcmQudGVsZWtvbS5kZS9nYXJkL3NlY3VyZS9wcm9qZWN0YXZhdGFyP3NpemU9bWVkaXVtJnBpZD0yMzAyOCZhdmF0YXJJZD0yNzk0MiJ9LCJpc3N1ZXR5cGVzIjpbeyJzZWxmIjoiaHR0cHM6Ly9nYXJkLnRlbGVrb20uZGUvZ2FyZC9yZXN0L2FwaS8yL2lzc3VldHlwZS83OSIsImlkIjoiNzkiLCJkZXNjcmlwdGlvbiI6IiIsImljb25VcmwiOiJodHRwczovL2dhcmQudGVsZWtvbS5kZS9nYXJkL3NlY3VyZS92aWV3YXZhdGFyP3NpemU9eHNtYWxsJmF2YXRhcklkPTE4MjQ3JmF2YXRhclR5cGU9aXNzdWV0eXBlIiwibmFtZSI6IkluY2lkZW50Iiwic3VidGFzayI6ZmFsc2UsImV4cGFuZCI6ImZpZWxkcyIsImZpZWxkcyI6eyJjdXN0b21maWVsZF8xMjgxMSI6eyJyZXF1aXJlZCI6ZmFsc2UsInNjaGVtYSI6eyJ0eXBlIjoiYW55IiwiY3VzdG9tIjoiY29tLnB5eGlzLmdyZWVuaG9wcGVyLmppcmE6Z2gtZXBpYy1saW5rIiwiY3VzdG9tSWQiOjEyODExfSwibmFtZSI6IkVwaWMgTGluayIsImhhc0RlZmF1bHRWYWx1ZSI6ZmFsc2UsIm9wZXJhdGlvbnMiOlsic2V0Il19LCJzdW1tYXJ5Ijp7InJlcXVpcmVkIjp0cnVlLCJzY2hlbWEiOnsidHlwZSI6InN0cmluZyIsInN5c3RlbSI6InN1bW1hcnkifSwibmFtZSI6IlN1bW1hcnkiLCJoYXNEZWZhdWx0VmFsdWUiOmZhbHNlLCJvcGVyYXRpb25zIjpbInNldCJdfSwiY3VzdG9tZmllbGRfMTI4MTAiOnsicmVxdWlyZWQiOmZhbHNlLCJzY2hlbWEiOnsidHlwZSI6ImFycmF5IiwiaXRlbXMiOiJzdHJpbmciLCJjdXN0b20iOiJjb20ucHl4aXMuZ3JlZW5ob3BwZXIuamlyYTpnaC1zcHJpbnQiLCJjdXN0b21JZCI6MTI4MTB9LCJuYW1lIjoiU3ByaW50IiwiaGFzRGVmYXVsdFZhbHVlIjpmYWxzZSwib3BlcmF0aW9ucyI6WyJzZXQiXX0sImlzc3VldHlwZSI6eyJyZXF1aXJlZCI6dHJ1ZSwic2NoZW1hIjp7InR5cGUiOiJpc3N1ZXR5cGUiLCJzeXN0ZW0iOiJpc3N1ZXR5cGUifSwibmFtZSI6Iklzc3VlIFR5cGUiLCJoYXNEZWZhdWx0VmFsdWUiOmZhbHNlLCJvcGVyYXRpb25zIjpbXSwiYWxsb3dlZFZhbHVlcyI6W3sic2VsZiI6Imh0dHBzOi8vZ2FyZC50ZWxla29tLmRlL2dhcmQvcmVzdC9hcGkvMi9pc3N1ZXR5cGUvNzkiLCJpZCI6Ijc5IiwiZGVzY3JpcHRpb24iOiIiLCJpY29uVXJsIjoiaHR0cHM6Ly9nYXJkLnRlbGVrb20uZGUvZ2FyZC9zZWN1cmUvdmlld2F2YXRhcj9zaXplPXhzbWFsbCZhdmF0YXJJZD0xODI0NyZhdmF0YXJUeXBlPWlzc3VldHlwZSIsIm5hbWUiOiJJbmNpZGVudCIsInN1YnRhc2siOmZhbHNlLCJhdmF0YXJJZCI6MTgyNDd9XX0sImNvbXBvbmVudHMiOnsicmVxdWlyZWQiOmZhbHNlLCJzY2hlbWEiOnsidHlwZSI6ImFycmF5IiwiaXRlbXMiOiJjb21wb25lbnQiLCJzeXN0ZW0iOiJjb21wb25lbnRzIn0sIm5hbWUiOiJDb21wb25lbnQvcyIsImhhc0RlZmF1bHRWYWx1ZSI6ZmFsc2UsIm9wZXJhdGlvbnMiOlsiYWRkIiwic2V0IiwicmVtb3ZlIl0sImFsbG93ZWRWYWx1ZXMiOltdfSwiZHVlZGF0ZSI6eyJyZXF1aXJlZCI6ZmFsc2UsInNjaGVtYSI6eyJ0eXBlIjoiZGF0ZSIsInN5c3RlbSI6ImR1ZWRhdGUifSwibmFtZSI6IkR1ZSBEYXRlIiwiaGFzRGVmYXVsdFZhbHVlIjpmYWxzZSwib3BlcmF0aW9ucyI6WyJzZXQiXX0sImRlc2NyaXB0aW9uIjp7InJlcXVpcmVkIjpmYWxzZSwic2NoZW1hIjp7InR5cGUiOiJzdHJpbmciLCJzeXN0ZW0iOiJkZXNjcmlwdGlvbiJ9LCJuYW1lIjoiRGVzY3JpcHRpb24iLCJoYXNEZWZhdWx0VmFsdWUiOmZhbHNlLCJvcGVyYXRpb25zIjpbInNldCJdfSwicHJvamVjdCI6eyJyZXF1aXJlZCI6dHJ1ZSwic2NoZW1hIjp7InR5cGUiOiJwcm9qZWN0Iiwic3lzdGVtIjoicHJvamVjdCJ9LCJuYW1lIjoiUHJvamVjdCIsImhhc0RlZmF1bHRWYWx1ZSI6ZmFsc2UsIm9wZXJhdGlvbnMiOlsic2V0Il0sImFsbG93ZWRWYWx1ZXMiOlt7InNlbGYiOiJodHRwczovL2dhcmQudGVsZWtvbS5kZS9nYXJkL3Jlc3QvYXBpLzIvcHJvamVjdC8yMzAyOCIsImlkIjoiMjMwMjgiLCJrZXkiOiJFSU9UIiwibmFtZSI6IkVJTyBUaWNrZXRzIiwiYXZhdGFyVXJscyI6eyI0OHg0OCI6Imh0dHBzOi8vZ2FyZC50ZWxla29tLmRlL2dhcmQvc2VjdXJlL3Byb2plY3RhdmF0YXI/cGlkPTIzMDI4JmF2YXRhcklkPTI3OTQyIiwiMjR4MjQiOiJodHRwczovL2dhcmQudGVsZWtvbS5kZS9nYXJkL3NlY3VyZS9wcm9qZWN0YXZhdGFyP3NpemU9c21hbGwmcGlkPTIzMDI4JmF2YXRhcklkPTI3OTQyIiwiMTZ4MTYiOiJodHRwczovL2dhcmQudGVsZWtvbS5kZS9nYXJkL3NlY3VyZS9wcm9qZWN0YXZhdGFyP3NpemU9eHNtYWxsJnBpZD0yMzAyOCZhdmF0YXJJZD0yNzk0MiIsIjMyeDMyIjoiaHR0cHM6Ly9nYXJkLnRlbGVrb20uZGUvZ2FyZC9zZWN1cmUvcHJvamVjdGF2YXRhcj9zaXplPW1lZGl1bSZwaWQ9MjMwMjgmYXZhdGFySWQ9Mjc5NDIifX1dfSwiYXNzaWduZWUiOnsicmVxdWlyZWQiOmZhbHNlLCJzY2hlbWEiOnsidHlwZSI6InVzZXIiLCJzeXN0ZW0iOiJhc3NpZ25lZSJ9LCJuYW1lIjoiQXNzaWduZWUiLCJhdXRvQ29tcGxldGVVcmwiOiJodHRwczovL2dhcmQudGVsZWtvbS5kZS9nYXJkL3Jlc3QvYXBpL2xhdGVzdC91c2VyL2Fzc2lnbmFibGUvc2VhcmNoP2lzc3VlS2V5PW51bGwmdXNlcm5hbWU9IiwiaGFzRGVmYXVsdFZhbHVlIjpmYWxzZSwib3BlcmF0aW9ucyI6WyJzZXQiXX0sInByaW9yaXR5Ijp7InJlcXVpcmVkIjpmYWxzZSwic2NoZW1hIjp7InR5cGUiOiJwcmlvcml0eSIsInN5c3RlbSI6InByaW9yaXR5In0sIm5hbWUiOiJQcmlvcml0eSIsImhhc0RlZmF1bHRWYWx1ZSI6dHJ1ZSwib3BlcmF0aW9ucyI6WyJzZXQiXSwiYWxsb3dlZFZhbHVlcyI6W3sic2VsZiI6Imh0dHBzOi8vZ2FyZC50ZWxla29tLmRlL2dhcmQvcmVzdC9hcGkvMi9wcmlvcml0eS8xMDAwMSIsImljb25VcmwiOiJodHRwczovL2dhcmQudGVsZWtvbS5kZS9nYXJkL2ltYWdlcy9pY29ucy9wcmlvcml0aWVzL2Jsb2NrZXIuc3ZnIiwibmFtZSI6IkJsb2NrZXIiLCJpZCI6IjEwMDAxIn0seyJzZWxmIjoiaHR0cHM6Ly9nYXJkLnRlbGVrb20uZGUvZ2FyZC9yZXN0L2FwaS8yL3ByaW9yaXR5LzEiLCJpY29uVXJsIjoiaHR0cHM6Ly9nYXJkLnRlbGVrb20uZGUvZ2FyZC9pbWFnZXMvaWNvbnMvcHJpb3JpdGllcy9jcml0aWNhbC5zdmciLCJuYW1lIjoiQ3JpdGljYWwgKEhpZ2gpIiwiaWQiOiIxIn0seyJzZWxmIjoiaHR0cHM6Ly9nYXJkLnRlbGVrb20uZGUvZ2FyZC9yZXN0L2FwaS8yL3ByaW9yaXR5LzMiLCJpY29uVXJsIjoiaHR0cHM6Ly9nYXJkLnRlbGVrb20uZGUvZ2FyZC9pbWFnZXMvaWNvbnMvcHJpb3JpdHlfbWVkaXVtLmdpZiIsIm5hbWUiOiJNYWpvciAoTWVkaXVtKSIsImlkIjoiMyJ9LHsic2VsZiI6Imh0dHBzOi8vZ2FyZC50ZWxla29tLmRlL2dhcmQvcmVzdC9hcGkvMi9wcmlvcml0eS81IiwiaWNvblVybCI6Imh0dHBzOi8vZ2FyZC50ZWxla29tLmRlL2dhcmQvaW1hZ2VzL2ljb25zL3ByaW9yaXRpZXMvbWlub3Iuc3ZnIiwibmFtZSI6Ik1pbm9yIChMb3cpIiwiaWQiOiI1In0seyJzZWxmIjoiaHR0cHM6Ly9nYXJkLnRlbGVrb20uZGUvZ2FyZC9yZXN0L2FwaS8yL3ByaW9yaXR5LzEwMDAwIiwiaWNvblVybCI6Imh0dHBzOi8vZ2FyZC50ZWxla29tLmRlL2dhcmQvaW1hZ2VzL2ljb25zL3ByaW9yaXRpZXMvdHJpdmlhbC5zdmciLCJuYW1lIjoiVHJpdmlhbCIsImlkIjoiMTAwMDAifV19LCJsYWJlbHMiOnsicmVxdWlyZWQiOmZhbHNlLCJzY2hlbWEiOnsidHlwZSI6ImFycmF5IiwiaXRlbXMiOiJzdHJpbmciLCJzeXN0ZW0iOiJsYWJlbHMifSwibmFtZSI6IkxhYmVscyIsImF1dG9Db21wbGV0ZVVybCI6Imh0dHBzOi8vZ2FyZC50ZWxla29tLmRlL2dhcmQvcmVzdC9hcGkvMS4wL2xhYmVscy9zdWdnZXN0P3F1ZXJ5PSIsImhhc0RlZmF1bHRWYWx1ZSI6ZmFsc2UsIm9wZXJhdGlvbnMiOlsiYWRkIiwic2V0IiwicmVtb3ZlIl19fX1dfV19",
-                "metaModel_error": "error"
+                "baseUrl": "https://gard.telekom.de/gard/rest/api/2",
+                "project": "KONNENTW",
+                "apiKey": "{{API_KEY}}"
             },
             "msg": {
                 "body": {
-                    "summary": "Das ist die Zusammenfassung",
-                    "description": "das ist die Erläuterung",
-                    "assignee": "c.pudollek",
-                    "labels": "test, PILOT"
+                    "fields": {
+                        "project": {
+                            "key": "KONNENTW"
+                        },
+                        "summary": "REST Test",
+                        "description": "Creating of an issue using project keys and issue type names using the REST API",
+                        "issuetype": {
+                            "name": "User Story"
+                        }
+                    }
+                }
+            }
+        },
+        "updateIssue": {
+            "cfg": {
+                "baseUrl": "https://gard.telekom.de/gard/rest/api/2",
+                "project": "CONNDEV",
+                "username": "{{USER}}",
+                "password": "{{PASSWORD}}"
+            },
+            "msg": {
+                "body":  {
+                    "id": "CONNDEV-26",
+                    "fields": {
+                        "assignee":{"name":"rares.gaia@endava.com"}
+                    }
                 }
             }
         }

@@ -1,176 +1,96 @@
 {
-  "title": "Jira",
-  "description": "Jira Connector",
-  "credentials": {
-    "fields": {
-      "username": {
-        "label":"Username",
-        "required": true,
-        "viewClass": "TextFieldWithNoteView",
-        "placeholder": "user",
-        "note": "Username for HTTP Basic Authentication"
-      },
-      "password": {
-        "label":"Password",
-        "required": true,
-        "viewClass": "TextFieldWithNoteView",
-        "placeholder": "password",
-        "note": "Password for HTTP Basic Authentication"
-      },
-      "schema": {
-        "label": "jira request schema",
-        "viewClass": "SelectView",
-        "model": {
-          "https": "https",
-          "http": "http"
-        },
-        "prompt": "Choose schema for Jira access",
-        "required": true
-      },
-      "host": {
-        "label": "jira host",
-        "viewClass": "TextFieldView",
-        "required": true
-      },
-      "port": {
-        "label": "jira port",
-        "viewClass": "TextFieldView",
-        "required": false
-      }
-    }
-  },
-  "actions": {
-    "getUser": {
-      "main": "./lib/actions/getUser.js",
-      "title": "retrieve an user",
-      "fields": {
-        "username": {
-          "label": "jira user to be retrieved",
-          "viewClass": "TextFieldView",
-          "required": true
-        },
-        "protocol": {
-          "label": "jira protocol",
-          "viewClass": "SelectView",
-          "model": {
-            "https": "https",
-            "http": "http"
-          },
-          "prompt": "Choose protocol for Jira access",
-          "required": true
-        },
-        "host": {
-          "label": "jira host",
-          "viewClass": "TextFieldView",
-          "required": true
-        },
-        "port": {
-          "label": "jira port",
-          "viewClass": "TextFieldView",
-          "required": false
-        },
-        "user": {
-          "label": "user",
-          "viewClass": "TextFieldView",
-          "required": true
-        },
-        "password": {
-          "label": "password",
-          "viewClass": "PasswordFieldView",
-          "required": true
+    "title": "Jira",
+    "description": "Connector for handling Jira issues",
+    "credentials": {
+        "fields": {
+            "baseUrl": {
+                "label": "Base URL for your Jira instance:",
+                "viewClass": "TextFieldView",
+                "required": true
+            },
+            "username": {
+                "label": "Username:",
+                "viewClass": "TextFieldView",
+                "required": true
+            },
+            "password": {
+                "label": "Password:",
+                "viewClass": "TextFieldView",
+                "required": true
+            }
         }
-      },
-      "metadata": {
-        "out": "./lib/schemas/generic.out.json"
-      }
     },
-    "createIssue": {
-      "main": "./lib/actions/createIssue.js",
-      "title": "creates a new Jira Issue",
-      "dynamicMetadata":true,
-      "fields": {
-        "digest": {
-          "label": "request digest",
-          "viewClass": "TextFieldView",
-          "required": false
-        },
-        "project": {
-          "label": "Project",
-          "viewClass": "SelectView",
-          "model": "listProjects",
-          "required": true,
-          "prompt": "Select Project"
-        },
-        "issueType": {
-          "label": "Issue Type",
-          "viewClass": "SelectView",
-          "model": "listIssueTypes",
-          "required": true,
-          "prompt": "Select Issue Type",
-		      "require": ["project"]
-        },
-        "priority": {
-          "label": "Priority",
-          "viewClass": "SelectView",
-          "model": "listPriorities",
-          "required": true,
-          "prompt": "Select Priority after modification of JIRA meta model",
-		      "require": ["project", "issueType"]
+    "triggers": {
+        "getNewIssues": {
+            "main": "./lib/triggers/getNewIssues.js",
+            "type": "polling",
+            "title": "Get New Issues",
+            "fields": {
+                "startDateTime": {
+                    "label": "Issues created since:",
+                    "required": true,
+                    "viewClass": "TextFieldWithNoteView",
+                    "placeholder": "yyyy-mm-dd hh:mm",
+                    "note": "Please use <code><b>yyyy-mm-dd hh:mm</b></code> format and use the same timezone as the one configured in JIRA."
+                },
+                "projects": {
+                    "label": "Project codes:",
+                    "viewClass": "TextFieldWithNoteView",
+                    "note": "Separate project codes with a single comma. Do not enclose in quotes."
+                },
+                "labels": {
+                    "label": "Retrieve issues having at least one of these labels:",
+                    "viewClass": "TextFieldWithNoteView",
+                    "note": "Separate labels with a single comma. Do not enclose in quotes."
+                },
+                "exclLabels": {
+                    "label": "Exclude issues having one of these labels:",
+                    "viewClass": "TextFieldWithNoteView",
+                    "note": "Separate labels with a single comma. Do not enclose in quotes."
+                },
+                "maxResults": {
+                    "label": "Maximum number of issues to retrieve:",
+                    "viewClass": "TextFieldWithNoteView",
+                    "default": "50",
+                    "note": "Default is 50. If there are more new issues than this, they will be retrieved the next time the trigger is run."
+                }
+            },
+            "metadata": {
+                "out": "./lib/schemas/issue.out.json"
+            }
         }
-      }
-    }
-  },
-  "triggers": {
-    "newTickets": {
-      "main": "./lib/triggers/newTickets.js",
-      "type": "polling",
-      "title": "polling for new Jira Tickets",
-      "fields": {
-        "projects": {
-          "label": "jira projects (comma seperated list of short names)",
-          "viewClass": "TextFieldView",
-          "required": true
+    },
+    "actions": {
+        "createIssue": {
+            "main": "./lib/actions/createIssue.js",
+            "title": "Create Issue",
+            "metadata": {
+                "in": "./lib/schemas/issue.in.json",
+                "out": "./lib/schemas/issue.out.json"
+            },
+            "fields": {
+                "projects": {
+                    "label": "Project codes:",
+                    "viewClass": "TextFieldWithNoteView",
+                    "note": "Separate project codes with a single comma. Do not enclose in quotes."
+                }
+            }
         },
-        "protocol": {
-          "label": "jira protocol",
-          "viewClass": "SelectView",
-          "model": {
-            "https": "https",
-            "http": "http"
-          },
-          "prompt": "Choose protocol for Jira access",
-          "required": true
+        "updateIssue": {
+            "main": "./lib/actions/updateIssue.js",
+            "title": "Update Issue",
+            "metadata": {
+                "in": "./lib/schemas/issue.in.json",
+                "out": "./lib/schemas/issue.out.json"
+            }
         },
-        "host": {
-          "label": "jira host",
-          "viewClass": "TextFieldView",
-          "required": true
-        },
-        "port": {
-          "label": "jira port",
-          "viewClass": "TextFieldView",
-          "required": false
-        },
-        "user": {
-          "label": "user",
-          "viewClass": "TextFieldView",
-          "required": true
-        },
-        "password": {
-          "label": "password",
-          "viewClass": "PasswordFieldView",
-          "required": true
-        },
-        "sample": {
-          "viewClass": "WebHookPayloadView",
-          "required": true,
-          "label": "Test data for test in designer",
-          "placeholder": "{ \"foo\" : \"bar\" }"
+        "getIssue": {
+            "main": "./lib/actions/getIssue.js",
+            "title": "Get Issue",
+            "metadata": {
+                "in": "./lib/schemas/getIssue.in.json",
+                "out": "./lib/schemas/issue.out.json"
+            }
         }
-      },
-      "metadata": {
-        "out": "./lib/schemas/generic.out.json"
-      }
     }
-  }
 }
