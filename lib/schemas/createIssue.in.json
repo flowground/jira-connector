@@ -4,11 +4,12 @@
         "fields": {
             "type": "object",
             "properties": {
-                "summary": {"type": "string"},
+                "summary": {"type": "string", "required": true},
                 "description": {"type": "string"},
                 "labels": {"type": "array"},
                 "project": {
                     "type": "object",
+                    "required": true,
                     "properties": {
                         "id": {"type": "string"},
                         "key": {"type": "string"},
@@ -17,6 +18,7 @@
                 },
                 "issuetype": {
                     "type": "object",
+                    "required": true,
                     "properties": {
                         "id": {"type": "string"},
                         "name": {"type": "string"}
@@ -29,7 +31,10 @@
                         "name": {"type": "string"}
                     }
                 },
-                "otherfields": {"type": "object"}
+                "otherfields": {
+                    "type": "object",
+                    "title": "Other fields (keys are field names)"
+                }
             }
         }
     }
