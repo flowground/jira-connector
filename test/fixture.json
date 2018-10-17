@@ -3,7 +3,7 @@
         "getNewIssues": {
             "cfg": {
                 "baseUrl": "https://gard.telekom.de/gard/rest/api/2",
-                "projects": "KONNENTW",
+                "projects": "CONNDEV",
                 "apiKey": "{{API_KEY}}",
                 "startDateTime": "2018-10-11",
                 "labels": "",
@@ -32,14 +32,14 @@
         "createIssue": {
             "cfg": {
                 "baseUrl": "https://gard.telekom.de/gard/rest/api/2",
-                "project": "KONNENTW",
+                "project": "CONNDEV",
                 "apiKey": "{{API_KEY}}"
             },
             "msg": {
                 "body": {
                     "fields": {
                         "project": {
-                            "key": "KONNENTW"
+                            "key": "CONNDEV"
                         },
                         "summary": "REST Test",
                         "description": "Creating of an issue using project keys and issue type names using the REST API",
