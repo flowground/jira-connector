@@ -113,8 +113,8 @@
             "main": "./lib/actions/createIssue.js",
             "title": "Create Issue",
             "metadata": {
-                "in": "./lib/schemas/issue.in.json",
-                "out": "./lib/schemas/issue.out.json"
+                "in": "./lib/schemas/createIssue.in.json",
+                "out": "./lib/schemas/createIssue.out.json"
             },
             "fields": {
                 "projects": {

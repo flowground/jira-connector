@@ -1,0 +1,41 @@
+{
+    "type": "object",
+    "properties": {
+        "fields": {
+            "type": "object",
+            "properties": {
+                "summary": {"type": "string"},
+                "description": {"type": "string"},
+                "labels": {"type": "array"},
+                "project": {
+                    "type": "object",
+                    "properties": {
+                        "id": {"type": "string"},
+                        "name": {"type": "string"}
+                    }
+                },
+                "issuetype": {
+                    "type": "object",
+                    "properties": {
+                        "id": {"type": "string"},
+                        "name": {"type": "string"}
+                    }
+                },
+                "status": {
+                    "type": "object",
+                    "properties": {
+                        "id": {"type": "string"},
+                        "name": {"type": "string"}
+                    }
+                },
+                "customFields": {
+                    "type": "array",
+                    "properties": {
+                        "name": {"type": "string"},
+                        "value": {"type": "string"}
+                    }
+                }
+            }
+        }
+    }
+}
