@@ -11,6 +11,7 @@
                     "type": "object",
                     "properties": {
                         "id": {"type": "string"},
+                        "key": {"type": "string"},
                         "name": {"type": "string"}
                     }
                 },
@@ -28,13 +29,7 @@
                         "name": {"type": "string"}
                     }
                 },
-                "customFields": {
-                    "type": "array",
-                    "properties": {
-                        "name": {"type": "string"},
-                        "value": {"type": "string"}
-                    }
-                }
+                "customfields": {"type": "array"}
             }
         }
     }
