@@ -115,13 +115,6 @@
             "metadata": {
                 "in": "./lib/schemas/createIssue.in.json",
                 "out": "./lib/schemas/createIssue.out.json"
-            },
-            "fields": {
-                "projects": {
-                    "label": "Project codes:",
-                    "viewClass": "TextFieldWithNoteView",
-                    "note": "Separate project codes with a single comma. Do not enclose in quotes."
-                }
             }
         },
         "updateIssue": {
