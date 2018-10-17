@@ -48,6 +48,11 @@
                     "viewClass": "TextFieldWithNoteView",
                     "note": "Separate labels with a single comma. Do not enclose in quotes."
                 },
+                "statuses": {
+                    "label": "Status names:",
+                    "viewClass": "TextFieldWithNoteView",
+                    "note": "Separate status names with a single comma. Do not enclose in quotes."
+                },
                 "maxResults": {
                     "label": "Maximum number of issues to retrieve:",
                     "viewClass": "TextFieldWithNoteView",
@@ -85,6 +90,11 @@
                     "label": "Exclude updated issues having one of these labels:",
                     "viewClass": "TextFieldWithNoteView",
                     "note": "Separate project codes with a single comma. Do not enclose in quotes."
+                },
+                "statuses": {
+                    "label": "Status names:",
+                    "viewClass": "TextFieldWithNoteView",
+                    "note": "Separate status names with a single comma. Do not enclose in quotes."
                 },
                 "maxResults": {
                     "label": "Maximum number of issues to retrieve:",
