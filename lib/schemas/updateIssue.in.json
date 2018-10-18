@@ -2,7 +2,7 @@
     "type": "object",
     "properties": {
         "id": {
-            "type": "object",
+            "type": "string",
             "required": true,
             "title": "ID of issue to be updated"
         },
