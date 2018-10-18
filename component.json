@@ -125,8 +125,8 @@
             "main": "./lib/actions/updateIssue.js",
             "title": "Update Issue",
             "metadata": {
-                "in": "./lib/schemas/issue.in.json",
-                "out": "./lib/schemas/issue.out.json"
+                "in": "./lib/schemas/updateIssue.in.json",
+                "out": "./lib/schemas/updateIssue.out.json"
             }
         },
         "getIssue": {
