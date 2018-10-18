@@ -6,7 +6,10 @@
             "properties": {
                 "summary": {"type": "string", "required": true},
                 "description": {"type": "string"},
-                "labels": {"type": "array"},
+                "labels": {
+                    "type": "array",
+                    "items": {"type": "string"}
+                },
                 "project": {
                     "type": "object",
                     "required": true,
@@ -31,7 +34,7 @@
                         "name": {"type": "string"}
                     }
                 },
-                "otherfields": {
+                "OTHER": {
                     "type": "object",
                     "title": "Other fields (keys are field names)"
                 }
