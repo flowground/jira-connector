@@ -92,9 +92,13 @@
                     "note": "Separate project codes with a single comma. Do not enclose in quotes."
                 },
                 "statuses": {
-                    "label": "Status names:",
+                    "label": "Current status(es):",
                     "viewClass": "TextFieldWithNoteView",
                     "note": "Separate status names with a single comma. Do not enclose in quotes."
+                },
+                "statusChangedTo": {
+                    "label": "Status changed to:",
+                    "viewClass": "TextFieldView"
                 },
                 "maxResults": {
                     "label": "Maximum number of issues to retrieve:",
