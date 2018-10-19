@@ -31,13 +31,6 @@
                         "name": {"type": "string"}
                     }
                 },
-                "status": {
-                    "type": "object",
-                    "properties": {
-                        "id": {"type": "string"},
-                        "name": {"type": "string"}
-                    }
-                },
                 "OTHER": {
                     "type": "object",
                     "title": "Other fields (keys are field names)"
