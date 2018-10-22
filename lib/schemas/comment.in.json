@@ -1,0 +1,15 @@
+{
+    "type": "object",
+    "properties": {
+        "issueId":   {"type": "string"},
+        "comment":  {
+            "type": "object",
+            "properties": {
+                "body": {
+                    "type": "string",
+                    "required": true
+                }
+            }
+        }
+    }
+}
