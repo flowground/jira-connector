@@ -1,0 +1,7 @@
+{
+    "type": "object",
+    "properties": {
+        "issueId":   {"type": "string"},
+        "comment":  {"type": "object"}
+    }
+}

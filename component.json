@@ -136,6 +136,14 @@
                 "in": "./lib/schemas/getIssue.in.json",
                 "out": "./lib/schemas/issue.out.json"
             }
+        },
+        "addComment": {
+            "main": "./lib/actions/addComment.js",
+            "title": "Add Comment",
+            "metadata": {
+                "in": "./lib/schemas/addComment.in.json",
+                "out": "./lib/schemas/addComment.out.json"
+            }
         }
     }
 }
