@@ -1,0 +1,11 @@
+{
+    "type": "object",
+    "properties": {
+        "issueId": {"type": "string", "required": true},
+        "statusName": {"type": "string", "required": true},
+        "transitions": {
+            "type": "array",
+            "required": true
+        }
+    }
+}
