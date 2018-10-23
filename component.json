@@ -56,15 +56,13 @@
                 "fields": {
                     "label": "Fields parameter:",
                     "viewClass": "TextFieldWithNoteView",
-                    "note": "See <a href='https://confluence.atlassian.com/jirasoftwareserver071/advanced-searching-800707146.html?_ga=2.253940872.1693196472.1540209052-1002374575.1532607982#Advancedsearching-referenceReference'>Jira DOCS</a> for more details",
-                    "placeholder": "summary, updated, created, etc."
-
+                    "note": "See <a href='https://docs.atlassian.com/software/jira/docs/api/REST/7.12.0/#api/2/search-search'>Jira DOCS</a> for details",
+                    "placeholder": "*nabigable"
                 },
                 "expand": {
                     "label": "Expand parameter:",
                     "viewClass": "TextFieldWithNoteView",
-                    "note": "See <a href='https://developer.atlassian.com/server/confluence/expansions-in-the-rest-api/'>Jira DOCS</a> for more details",
-                    "placeholder": "comments, transitions, etc."
+                    "note": "See <a href='https://docs.atlassian.com/software/jira/docs/api/REST/7.12.0/#api/2/search-search'>Jira DOCS</a> for details"
                 },
                 "maxResults": {
                     "label": "Maximum number of issues to retrieve:",
@@ -116,15 +114,13 @@
                 "fields": {
                     "label": "Fields parameter:",
                     "viewClass": "TextFieldWithNoteView",
-                    "note": "See <a href='https://confluence.atlassian.com/jirasoftwareserver071/advanced-searching-800707146.html?_ga=2.253940872.1693196472.1540209052-1002374575.1532607982#Advancedsearching-referenceReference'>Jira DOCS</a> for more details",
-                    "placeholder": "summary, updated, created, etc."
-
+                    "note": "See <a href='https://docs.atlassian.com/software/jira/docs/api/REST/7.12.0/#api/2/search-search'>Jira DOCS</a> for details",
+                    "placeholder": "*nabigable"
                 },
                 "expand": {
                     "label": "Expand parameter:",
                     "viewClass": "TextFieldWithNoteView",
-                    "note": "See <a href='https://developer.atlassian.com/server/confluence/expansions-in-the-rest-api/'>Jira DOCS</a> for more details",
-                    "placeholder": "comments, transitions, etc."
+                    "note": "See <a href='https://docs.atlassian.com/software/jira/docs/api/REST/7.12.0/#api/2/search-search'>Jira DOCS</a> for details"
                 },
                 "maxResults": {
                     "label": "Maximum number of issues to retrieve:",
