@@ -53,17 +53,6 @@
                     "viewClass": "TextFieldWithNoteView",
                     "note": "Separate status names with a single comma. Do not enclose in quotes."
                 },
-                "fields": {
-                    "label": "Fields parameter:",
-                    "viewClass": "TextFieldWithNoteView",
-                    "note": "See <a href='https://docs.atlassian.com/software/jira/docs/api/REST/7.12.0/#api/2/search-search'>Jira DOCS</a> for details",
-                    "placeholder": "*navigable"
-                },
-                "expand": {
-                    "label": "Expand parameter:",
-                    "viewClass": "TextFieldWithNoteView",
-                    "note": "See <a href='https://docs.atlassian.com/software/jira/docs/api/REST/7.12.0/#api/2/search-search'>Jira DOCS</a> for details"
-                },
                 "maxResults": {
                     "label": "Maximum number of issues to retrieve:",
                     "viewClass": "TextFieldWithNoteView",
@@ -110,17 +99,6 @@
                 "statusChangedTo": {
                     "label": "Status changed to:",
                     "viewClass": "TextFieldView"
-                },
-                "fields": {
-                    "label": "Fields parameter:",
-                    "viewClass": "TextFieldWithNoteView",
-                    "note": "See <a href='https://docs.atlassian.com/software/jira/docs/api/REST/7.12.0/#api/2/search-search'>Jira DOCS</a> for details",
-                    "placeholder": "*navigable"
-                },
-                "expand": {
-                    "label": "Expand parameter:",
-                    "viewClass": "TextFieldWithNoteView",
-                    "note": "See <a href='https://docs.atlassian.com/software/jira/docs/api/REST/7.12.0/#api/2/search-search'>Jira DOCS</a> for details"
                 },
                 "maxResults": {
                     "label": "Maximum number of issues to retrieve:",
