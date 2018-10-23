@@ -115,7 +115,7 @@
                     "label": "Fields parameter:",
                     "viewClass": "TextFieldWithNoteView",
                     "note": "See <a href='https://docs.atlassian.com/software/jira/docs/api/REST/7.12.0/#api/2/search-search'>Jira DOCS</a> for details",
-                    "placeholder": "*nabigable"
+                    "placeholder": "*navigable"
                 },
                 "expand": {
                     "label": "Expand parameter:",
