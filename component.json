@@ -53,6 +53,14 @@
                     "viewClass": "TextFieldWithNoteView",
                     "note": "Separate status names with a single comma. Do not enclose in quotes."
                 },
+                "fields": {
+                    "label": "Fields:",
+                    "viewClass": "TextFieldView"
+                },
+                "expand": {
+                    "label": "Expand:",
+                    "viewClass": "TextFieldView"
+                },
                 "maxResults": {
                     "label": "Maximum number of issues to retrieve:",
                     "viewClass": "TextFieldWithNoteView",
@@ -98,6 +106,14 @@
                 },
                 "statusChangedTo": {
                     "label": "Status changed to:",
+                    "viewClass": "TextFieldView"
+                },
+                "fields": {
+                    "label": "Fields:",
+                    "viewClass": "TextFieldView"
+                },
+                "expand": {
+                    "label": "Expand:",
                     "viewClass": "TextFieldView"
                 },
                 "maxResults": {
