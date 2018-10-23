@@ -141,8 +141,8 @@
             "main": "./lib/actions/addComment.js",
             "title": "Add Comment",
             "metadata": {
-                "in": "./lib/schemas/comment.in.json",
-                "out": "./lib/schemas/comment.out.json"
+                "in": "./lib/schemas/addComment.in.json",
+                "out": "./lib/schemas/addComment.out.json"
             }
         }
     }
