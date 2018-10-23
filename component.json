@@ -129,6 +129,14 @@
                 "out": "./lib/schemas/updateIssue.out.json"
             }
         },
+        "doTransition": {
+            "main": "./lib/actions/doTransition.js",
+            "title": "Update Issue",
+            "metadata": {
+                "in": "./lib/schemas/doTransition.in.json",
+                "out": "./lib/schemas/doTransition.out.json"
+            }
+        },
         "getIssue": {
             "main": "./lib/actions/getIssue.js",
             "title": "Get Issue",
