@@ -65,6 +65,21 @@
                     }
                 }
             }
+        },
+        "addComment": {
+            "cfg": {
+                "baseUrl": "https://gard.telekom.de/gard/rest/api/2",
+                "username": "{{USER}}",
+                "password": "{{PASSWORD}}"
+            },
+            "msg": {
+                "body":  {
+                    "issueId": "CONNDEV-26",
+                    "comment": {
+                        "body": "lorem ipsum dolorem sit"
+                    }
+                }
+            }
         }
     }
 }
