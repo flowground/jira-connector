@@ -54,12 +54,17 @@
                     "note": "Separate status names with a single comma. Do not enclose in quotes."
                 },
                 "fields": {
-                    "label": "Fields:",
-                    "viewClass": "TextFieldView"
+                    "label": "Fields parameter:",
+                    "viewClass": "TextFieldWithNoteView",
+                    "note": "See <a href='https://confluence.atlassian.com/jirasoftwareserver071/advanced-searching-800707146.html?_ga=2.253940872.1693196472.1540209052-1002374575.1532607982#Advancedsearching-referenceReference'>Jira DOCS</a> for more details",
+                    "placeholder": "summary, updated, created, etc."
+
                 },
                 "expand": {
-                    "label": "Expand:",
-                    "viewClass": "TextFieldView"
+                    "label": "Expand parameter:",
+                    "viewClass": "TextFieldWithNoteView",
+                    "note": "See <a href='https://developer.atlassian.com/server/confluence/expansions-in-the-rest-api/'>Jira DOCS</a> for more details",
+                    "placeholder": "comments, transitions, etc."
                 },
                 "maxResults": {
                     "label": "Maximum number of issues to retrieve:",
@@ -109,12 +114,17 @@
                     "viewClass": "TextFieldView"
                 },
                 "fields": {
-                    "label": "Fields:",
-                    "viewClass": "TextFieldView"
+                    "label": "Fields parameter:",
+                    "viewClass": "TextFieldWithNoteView",
+                    "note": "See <a href='https://confluence.atlassian.com/jirasoftwareserver071/advanced-searching-800707146.html?_ga=2.253940872.1693196472.1540209052-1002374575.1532607982#Advancedsearching-referenceReference'>Jira DOCS</a> for more details",
+                    "placeholder": "summary, updated, created, etc."
+
                 },
                 "expand": {
-                    "label": "Expand:",
-                    "viewClass": "TextFieldView"
+                    "label": "Expand parameter:",
+                    "viewClass": "TextFieldWithNoteView",
+                    "note": "See <a href='https://developer.atlassian.com/server/confluence/expansions-in-the-rest-api/'>Jira DOCS</a> for more details",
+                    "placeholder": "comments, transitions, etc."
                 },
                 "maxResults": {
                     "label": "Maximum number of issues to retrieve:",
@@ -145,12 +155,12 @@
                 "out": "./lib/schemas/updateIssue.out.json"
             }
         },
-        "updateStatus": {
-            "main": "./lib/actions/updateStatus.js",
+        "doTransition": {
+            "main": "./lib/actions/doTransition.js",
             "title": "Update Issue",
             "metadata": {
-                "in": "./lib/schemas/updateIssue.in.json",
-                "out": "./lib/schemas/updateIssue.out.json"
+                "in": "./lib/schemas/doTransition.in.json",
+                "out": "./lib/schemas/doTransition.out.json"
             }
         },
         "getIssue": {
