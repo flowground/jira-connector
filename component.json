@@ -129,6 +129,14 @@
                 "out": "./lib/schemas/updateIssue.out.json"
             }
         },
+        "updateStatus": {
+            "main": "./lib/actions/updateStatus.js",
+            "title": "Update Issue",
+            "metadata": {
+                "in": "./lib/schemas/updateIssue.in.json",
+                "out": "./lib/schemas/updateIssue.out.json"
+            }
+        },
         "getIssue": {
             "main": "./lib/actions/getIssue.js",
             "title": "Get Issue",

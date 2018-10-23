@@ -1,0 +1,11 @@
+{
+    "type": "object",
+    "properties": {
+        "transition": {
+            "type": "object",
+            "properties": {
+                "id": "string"
+            }
+        }
+    }
+}
