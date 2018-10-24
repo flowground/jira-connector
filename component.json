@@ -131,7 +131,7 @@
         },
         "doTransition": {
             "main": "./lib/actions/doTransition.js",
-            "title": "Update Issue",
+            "title": "Update Status",
             "metadata": {
                 "in": "./lib/schemas/doTransition.in.json",
                 "out": "./lib/schemas/doTransition.out.json"
