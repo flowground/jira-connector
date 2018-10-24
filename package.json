@@ -10,6 +10,7 @@
     "dependencies": {
         "elasticio-node": "0.0.9",
         "elasticio-sailor-nodejs": "^2.2.1",
+        "moment": "^2.22.2",
         "q": "^1.5.1",
         "request": "2.76.0",
         "request-promise": "4.1.1"

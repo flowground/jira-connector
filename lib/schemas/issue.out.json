@@ -1,8 +1,7 @@
 {
     "type": "object",
     "properties": {
-        "id":   {"type": "string"},
-        "key":  {"type": "string"},
-        "self": {"type": "string"}
+        "meta": {"type": "object"},
+        "issue": {"type": "object"}
     }
 }
