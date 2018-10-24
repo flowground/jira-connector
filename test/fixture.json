@@ -4,7 +4,8 @@
             "cfg": {
                 "baseUrl": "https://gard.telekom.de/gard/rest/api/2",
                 "projects": "CONNDEV",
-                "apiKey": "{{API_KEY}}",
+                "username": "{{USER}}",
+                "password": "{{PASSWORD}}",
                 "startDateTime": "2018-10-11",
                 "labels": "",
                 "exclLabels": ""
