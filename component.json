@@ -160,6 +160,14 @@
                 "in": "./lib/schemas/addComment.in.json",
                 "out": "./lib/schemas/addComment.out.json"
             }
+        },
+        "addAttachment": {
+            "main": "./lib/actions/addAttachment.js",
+            "title": "Add Attachment",
+            "metadata": {
+                "in": "./lib/schemas/addAttachment.in.json",
+                "out": "./lib/schemas/issue.out.json"
+            }
         }
     }
 }
