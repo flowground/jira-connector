@@ -57,14 +57,10 @@
                     "label": "Include comments:",
                     "viewClass": "CheckBoxView"
                 },
-                "haveNewComments": {
-                    "label": "Have new comments:",
-                    "viewClass": "CheckBoxView"
-                },
                 "haveCommentsForRole": {
                     "label": "Have comments for role:",
                     "viewClass": "TextFieldWithNoteView",
-                    "note": " Issues containing comments restricted to the specified role."
+                    "note": "Issues containing comments restricted to the specified role."
                 },
                 "haveCommentsWithVisibility": {
                     "label": "Have comments with visibility:",
@@ -129,7 +125,7 @@
                 "haveCommentsForRole": {
                     "label": "Have comments for role:",
                     "viewClass": "TextFieldWithNoteView",
-                    "note": " Issues containing comments restricted to the specified role."
+                    "note": "Issues containing comments restricted to the specified role."
                 },
                 "haveCommentsWithVisibility": {
                     "label": "Have comments with visibility:",
@@ -179,14 +175,6 @@
             "metadata": {
                 "in": "./lib/schemas/getIssue.in.json",
                 "out": "./lib/schemas/issue.out.json"
-            }
-        },
-        "getComments": {
-            "main": "./lib/actions/getComments.js",
-            "title": "Get Comments",
-            "metadata": {
-                "in": "./lib/schemas/getComments.in.json",
-                "out": "./lib/schemas/getComments.out.json"
             }
         },
         "addComment": {
