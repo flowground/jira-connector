@@ -53,15 +53,29 @@
                     "viewClass": "TextFieldWithNoteView",
                     "note": "Separate status names with a single comma. Do not enclose in quotes."
                 },
+                "includeComments": {
+                    "label": "Include comments:",
+                    "viewClass": "CheckBoxView"
+                },
+                "haveNewComments": {
+                    "label": "Have new comments:",
+                    "viewClass": "CheckBoxView"
+                },
+                "haveCommentsForRole": {
+                    "label": "Have comments for role:",
+                    "viewClass": "TextFieldWithNoteView",
+                    "note": " Issues containing comments restricted to the specified role."
+                },
+                "haveCommentsWithVisibility": {
+                    "label": "Have comments with visibility:",
+                    "viewClass": "TextFieldWithNoteView",
+                    "note": "Issues containing comments with the specified visibility."
+                },
                 "maxResults": {
                     "label": "Maximum number of issues to retrieve:",
                     "viewClass": "TextFieldWithNoteView",
                     "default": "50",
                     "note": "Default is 50. If there are more new issues than this, they will be retrieved the next time the trigger is run."
-                },
-                "includeComments": {
-                    "label": "Include comments:",
-                    "viewClass": "CheckBoxView"
                 }
             },
             "metadata": {
@@ -104,15 +118,29 @@
                     "label": "Status changed to:",
                     "viewClass": "TextFieldView"
                 },
+                "includeComments": {
+                    "label": "Include comments:",
+                    "viewClass": "CheckBoxView"
+                },
+                "haveNewComments": {
+                    "label": "Have new comments:",
+                    "viewClass": "CheckBoxView"
+                },
+                "haveCommentsForRole": {
+                    "label": "Have comments for role:",
+                    "viewClass": "TextFieldWithNoteView",
+                    "note": " Issues containing comments restricted to the specified role."
+                },
+                "haveCommentsWithVisibility": {
+                    "label": "Have comments with visibility:",
+                    "viewClass": "TextFieldWithNoteView",
+                    "note": "Issues containing comments with the specified visibility."
+                },
                 "maxResults": {
                     "label": "Maximum number of issues to retrieve:",
                     "viewClass": "TextFieldWithNoteView",
                     "default": "50",
                     "note": "Default is 50. If there are more new issues than this, they will be retrieved the next time the trigger is run."
-                },
-                "includeComments": {
-                    "label": "Include comments:",
-                    "viewClass": "CheckBoxView"
                 }
             },
             "metadata": {
@@ -151,6 +179,14 @@
             "metadata": {
                 "in": "./lib/schemas/getIssue.in.json",
                 "out": "./lib/schemas/issue.out.json"
+            }
+        },
+        "getComments": {
+            "main": "./lib/actions/getComments.js",
+            "title": "Get Comments",
+            "metadata": {
+                "in": "./lib/schemas/getComments.in.json",
+                "out": "./lib/schemas/getComments.out.json"
             }
         },
         "addComment": {
