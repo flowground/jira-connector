@@ -1,13 +1,14 @@
 {
     "type": "object",
     "properties": {
-        "issueId":   {"type": "string"},
+        "issueId":   {"type": "string", "required": true},
         "attachment":  {
             "type": "object",
+            "required": true,
             "properties": {
-                "url": {"type": "string"},
-                "contentType": {"type": "string"},
-                "filename": {"type": "string"}
+                "filename": {"type": "string", "required": true},
+                "url": {"type": "string", "required": true},
+                "contentType": {"type": "string"}
             }
         }
     }
