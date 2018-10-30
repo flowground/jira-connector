@@ -5,7 +5,7 @@
         "attachment":  {
             "type": "object",
             "properties": {
-                "getAttachmentUrl": {"type": "string"},
+                "url": {"type": "string"},
                 "contentType": {"type": "string"},
                 "filename": {"type": "string"}
             }

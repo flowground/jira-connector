@@ -166,7 +166,7 @@
             "title": "Add Attachment",
             "metadata": {
                 "in": "./lib/schemas/addAttachment.in.json",
-                "out": "./lib/schemas/issue.out.json"
+                "out": {}
             }
         }
     }
