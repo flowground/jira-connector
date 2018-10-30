@@ -175,6 +175,34 @@
                 "out": "./lib/schemas/addComment.out.json"
             }
         },
+        "getComments": {
+            "main": "./lib/actions/getComments.js",
+            "title": "Get Comments",
+            "fields": {
+                "excludedAuthors": {
+                    "label": "Excluded authors (usernames):",
+                    "viewClass": "TextFieldWithNoteView",
+                    "note": "Don't return comments made by any of these users. Separate multiple usernames with a single comma. Do not enclose in quotes."
+                },
+                "visibility": {
+                    "label": "Select visibility:",
+                    "viewClass": "SelectView",
+                    "model": {
+                        "internal": "Internal",
+                        "external": "External"
+                    }
+                },
+                "roles": {
+                    "label": "Roles:",
+                    "viewClass": "TextFieldWithNoteView",
+                    "note": "Separate role names with a single comma. Do not enclose in quotes."
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getComments.in.json",
+                "out": {}
+            }
+        },
         "addAttachment": {
             "main": "./lib/actions/addAttachment.js",
             "title": "Add Attachment",
