@@ -1,0 +1,15 @@
+{
+    "type": "object",
+    "properties": {
+        "issueId":   {"type": "string", "required": true},
+        "attachment":  {
+            "type": "object",
+            "required": true,
+            "properties": {
+                "filename": {"type": "string", "required": true},
+                "url": {"type": "string", "required": true},
+                "contentType": {"type": "string"}
+            }
+        }
+    }
+}
