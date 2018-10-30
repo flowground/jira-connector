@@ -108,17 +108,17 @@
                     "label": "Include comments:",
                     "viewClass": "CheckBoxView"
                 },
-                "haveNewComments": {
-                    "label": "Have new comments:",
+                "withNewComments": {
+                    "label": "With new comments:",
                     "viewClass": "CheckBoxView"
                 },
-                "haveCommentsForRole": {
-                    "label": "Have comments for role:",
+                "withCommentsForRole": {
+                    "label": "With comments for role:",
                     "viewClass": "TextFieldWithNoteView",
                     "note": "Issues containing comments restricted to the specified role."
                 },
-                "haveCommentsWithVisibility": {
-                    "label": "Have comments with visibility:",
+                "withCommentsWithVisibility": {
+                    "label": "With comments with visibility:",
                     "viewClass": "TextFieldWithNoteView",
                     "note": "Issues containing comments with the specified visibility."
                 },
