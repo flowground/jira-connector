@@ -57,16 +57,6 @@
                     "label": "Include comments:",
                     "viewClass": "CheckBoxView"
                 },
-                "haveCommentsForRole": {
-                    "label": "Have comments for role:",
-                    "viewClass": "TextFieldWithNoteView",
-                    "note": "Issues containing comments restricted to the specified role."
-                },
-                "haveCommentsWithVisibility": {
-                    "label": "Have comments with visibility:",
-                    "viewClass": "TextFieldWithNoteView",
-                    "note": "Issues containing comments with the specified visibility."
-                },
                 "maxResults": {
                     "label": "Maximum number of issues to retrieve:",
                     "viewClass": "TextFieldWithNoteView",
