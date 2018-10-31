@@ -1,7 +1,7 @@
 {
     "type": "object",
     "properties": {
-        "issueId": {"type": "string","required": true},
+        "issueId": {"type": "string", "required": true},
         "createdAfter": {"type": "string"},
         "updatedAfter": {"type": "string"}
     }
