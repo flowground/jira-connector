@@ -182,10 +182,10 @@
                 "excludedAuthors": {
                     "label": "Excluded authors (usernames):",
                     "viewClass": "TextFieldWithNoteView",
-                    "note": "Don't return comments made by any of these users. Separate multiple usernames with a single comma. Do not enclose in quotes."
+                    "note": "Specify one or multiple usernames (comma separated) for which you don't want comments to be returned."
                 },
                 "visibility": {
-                    "label": "Select visibility:",
+                    "label": "Visibility:",
                     "viewClass": "SelectView",
                     "model": {
                         "internal": "Internal",
