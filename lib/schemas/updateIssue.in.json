@@ -25,7 +25,6 @@
                 },
                 "issuetype": {
                     "type": "object",
-                    "required": true,
                     "properties": {
                         "id": {"type": "string"},
                         "name": {"type": "string"}
