@@ -1,0 +1,10 @@
+{
+    "type": "object",
+    "properties": {
+        "attachments": {
+            "type": "array",
+            "required": true,
+            "items": {"type": "string"}
+        }
+    }
+}
