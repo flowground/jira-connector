@@ -108,6 +108,10 @@
                     "label": "Include comments",
                     "viewClass": "CheckBoxView"
                 },
+                "includeAttachments": {
+                    "label": "Include attachments",
+                    "viewClass": "CheckBoxView"
+                },
                 "hasNewComments": {
                     "label": "With new comments",
                     "viewClass": "CheckBoxView"
