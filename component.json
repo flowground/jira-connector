@@ -100,27 +100,39 @@
                     "viewClass": "TextFieldWithNoteView",
                     "note": "Separate status names with a single comma. Do not enclose in quotes."
                 },
-                "statusChangedTo": {
-                    "label": "Status changed to:",
+                "statusChangedToAndRemainedIn": {
+                    "label": "Status changed to and remained in:",
                     "viewClass": "TextFieldView"
                 },
                 "includeComments": {
-                    "label": "Include comments:",
+                    "label": "Include comments",
+                    "viewClass": "CheckBoxView"
+                },
+                "includeAttachments": {
+                    "label": "Include attachments",
                     "viewClass": "CheckBoxView"
                 },
                 "hasNewComments": {
-                    "label": "With new comments:",
+                    "label": "With new comments",
                     "viewClass": "CheckBoxView"
                 },
-                "hasCommentsForRole": {
-                    "label": "With comments for role:",
+                "excludedAuthors": {
+                    "label": "With new comments that are not created by authors (usernames):",
                     "viewClass": "TextFieldWithNoteView",
-                    "note": "Issues containing comments restricted to the specified role."
+                    "note": "Specify one or multiple usernames (comma separated) for which you don't want comments to be returned."
                 },
-                "hasCommentsWithVisibility": {
-                    "label": "With comments with visibility:",
+                "visibility": {
+                    "label": "With new comments with visibility:",
+                    "viewClass": "SelectView",
+                    "model": {
+                        "internal": "Internal",
+                        "external": "External"
+                    }
+                },
+                "roles": {
+                    "label": "With new comments for roles:",
                     "viewClass": "TextFieldWithNoteView",
-                    "note": "Issues containing comments with the specified visibility."
+                    "note": "Separate role names with a single comma. Do not enclose in quotes."
                 },
                 "maxResults": {
                     "label": "Maximum number of issues to retrieve:",
@@ -147,8 +159,8 @@
             "main": "./lib/actions/updateIssue.js",
             "title": "Update Issue",
             "metadata": {
-                "in": "./lib/schemas/updateIssue.in.json",
-                "out": "./lib/schemas/updateIssue.out.json"
+                "in": "./lib/schemas/issue.in.json",
+                "out": {}
             }
         },
         "doTransition": {
@@ -165,6 +177,14 @@
             "metadata": {
                 "in": "./lib/schemas/getIssue.in.json",
                 "out": "./lib/schemas/issue.out.json"
+            }
+        },
+        "processAttachments": {
+            "main": "./lib/actions/processAttachments.js",
+            "title": "Process Attachments",
+            "metadata": {
+                "in": "./lib/schemas/issue.in.json",
+                "out": {}
             }
         },
         "addComment": {
