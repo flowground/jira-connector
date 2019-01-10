@@ -10,8 +10,11 @@ module.exports = verify;
  * @param {object} credentials
  * @returns {Promise}
  */
-
 function verify(credentials) {
     const jira = new JiraConnector(credentials);
-    return jira.request('GET', '/search', {maxResults: 0});
+    return jira.searchIssues('', {}, {maxResults: 0})
+        .catch(err => {
+            console.log('Verify Credentials error:', JSON.stringify(err));
+            return Promise.reject(err);
+        });
 }
