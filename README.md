@@ -1,4 +1,5 @@
 # eio.jira
+![Jira logo](logo.png "Jira logo") 
 Jira connector for the [Mittelstands plattform](https://app.msp-live.external.otc.telekomcloud.com/ "MittelStands platform")
 
 > Jira is a proprietary issue tracking product developed by Atlassian that allows bug tracking and agile project management.
