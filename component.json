@@ -26,7 +26,7 @@
         }
     },
     "triggers": {
-        "getNewIssues": {
+        "getNewIssuesTrigger": {
             "main": "./lib/triggers/getNewIssues.js",
             "type": "polling",
             "title": "Get New Issues",
@@ -73,7 +73,7 @@
                 "out": "./lib/schemas/issue.out.json"
             }
         },
-        "getUpdatedIssues": {
+        "getUpdatedIssuesTrigger": {
             "main": "./lib/triggers/getUpdatedIssues.js",
             "type": "polling",
             "title": "Get Updated Issues",
@@ -152,6 +152,128 @@
         }
     },
     "actions": {
+        "getNewIssues": {
+            "main": "./lib/triggers/getNewIssues.js",
+            "title": "Get New Issues",
+            "fields": {
+                "startDateTime": {
+                    "label": "Issues created since:",
+                    "required": true,
+                    "viewClass": "TextFieldWithNoteView",
+                    "placeholder": "yyyy-mm-dd hh:mm",
+                    "note": "Please use <code><b>yyyy-mm-dd hh:mm</b></code> format and use the same timezone as the one configured in JIRA."
+                },
+                "projects": {
+                    "label": "Project codes:",
+                    "viewClass": "TextFieldWithNoteView",
+                    "note": "Separate project codes with a single comma. Do not enclose in quotes."
+                },
+                "labels": {
+                    "label": "Retrieve issues having at least one of these labels:",
+                    "viewClass": "TextFieldWithNoteView",
+                    "note": "Separate labels with a single comma. Do not enclose in quotes."
+                },
+                "exclLabels": {
+                    "label": "Exclude issues having one of these labels:",
+                    "viewClass": "TextFieldWithNoteView",
+                    "note": "Separate labels with a single comma. Do not enclose in quotes."
+                },
+                "statuses": {
+                    "label": "Status names:",
+                    "viewClass": "TextFieldWithNoteView",
+                    "note": "Separate status names with a single comma. Do not enclose in quotes."
+                },
+                "includeComments": {
+                    "label": "Include comments:",
+                    "viewClass": "CheckBoxView"
+                },
+                "maxResults": {
+                    "label": "Maximum number of issues to retrieve:",
+                    "viewClass": "TextFieldWithNoteView",
+                    "default": "50",
+                    "note": "Default is 50. If there are more new issues than this, they will be retrieved the next time the trigger is run."
+                }
+            },
+            "metadata": {
+                "out": "./lib/schemas/issue.out.json"
+            }
+        },
+        "getUpdatedIssues": {
+            "main": "./lib/triggers/getUpdatedIssues.js",
+            "title": "Get Updated Issues",
+            "fields": {
+                "startDateTime": {
+                    "label": "Issues updated since:",
+                    "required": true,
+                    "viewClass": "TextFieldWithNoteView",
+                    "placeholder": "yyyy-mm-dd hh:mm",
+                    "note": "Please use <code><b>yyyy-mm-dd hh:mm</b></code> format and use the same timezone as the one configured in JIRA."
+                },
+                "projects": {
+                    "label": "Project codes:",
+                    "viewClass": "TextFieldWithNoteView",
+                    "note": "Separate project codes with a single comma. Do not enclose in quotes."
+                },
+                "labels": {
+                    "label": "Retrieve updated issues having at least one of these labels:",
+                    "viewClass": "TextFieldWithNoteView",
+                    "note": "Separate project codes with a single comma. Do not enclose in quotes."
+                },
+                "exclLabels": {
+                    "label": "Exclude updated issues having one of these labels:",
+                    "viewClass": "TextFieldWithNoteView",
+                    "note": "Separate project codes with a single comma. Do not enclose in quotes."
+                },
+                "statuses": {
+                    "label": "Current status(es):",
+                    "viewClass": "TextFieldWithNoteView",
+                    "note": "Separate status names with a single comma. Do not enclose in quotes."
+                },
+                "statusChangedToAndRemainedIn": {
+                    "label": "Status changed to and remained in:",
+                    "viewClass": "TextFieldView"
+                },
+                "includeComments": {
+                    "label": "Include comments",
+                    "viewClass": "CheckBoxView"
+                },
+                "includeAttachments": {
+                    "label": "Include attachments",
+                    "viewClass": "CheckBoxView"
+                },
+                "hasNewComments": {
+                    "label": "With new comments",
+                    "viewClass": "CheckBoxView"
+                },
+                "excludedAuthors": {
+                    "label": "With new comments that are not created by authors (usernames):",
+                    "viewClass": "TextFieldWithNoteView",
+                    "note": "Specify one or multiple usernames (comma separated) for which you don't want comments to be returned."
+                },
+                "visibility": {
+                    "label": "With new comments with visibility:",
+                    "viewClass": "SelectView",
+                    "model": {
+                        "internal": "Internal",
+                        "external": "External"
+                    }
+                },
+                "roles": {
+                    "label": "With new comments for roles:",
+                    "viewClass": "TextFieldWithNoteView",
+                    "note": "Separate role names with a single comma. Do not enclose in quotes."
+                },
+                "maxResults": {
+                    "label": "Maximum number of issues to retrieve:",
+                    "viewClass": "TextFieldWithNoteView",
+                    "default": "50",
+                    "note": "Default is 50. If there are more new issues than this, they will be retrieved the next time the trigger is run."
+                }
+            },
+            "metadata": {
+                "out": "./lib/schemas/issue.out.json"
+            }
+        },
         "createIssue": {
             "main": "./lib/actions/createIssue.js",
             "title": "Create Issue",
