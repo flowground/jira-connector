@@ -26,6 +26,8 @@ The first step in using Jira connector is configuring the credentials
 
 ## Using the connector
 ### actions: 
+* getNewIssues → Get all new Jira issues which can optionally be filtered by the date they were created, the project they are in, the labels they contain, the statuses they have, the author of the issue, and many others. The user can also select on whether the issue will include the attachments or not. The output will be an object that contains the ticket and a property called meta which will contain the exact datetime when this trigger was run 
+* getUpdatedIssues → Get all issues that have been updated. This trigger functions the same as the getNewIssues trigger but it retrieves issues that have been updated instead of newly created ones
 * addAttachment → Add Attachment to Jira issue. The file must be previously uploaded to the platform using the processAttachment action     
 * addComment → Add comment to Jira issue. The text of the comment can be formatted in the markup format supported by Jira
 (see https://jira.atlassian.com/secure/WikiRendererHelpAction.jspa?section=all)  
@@ -40,8 +42,8 @@ The first step in using Jira connector is configuring the credentials
 _Most actions contain a input field called "OTHER" which will allow a user to add additional fields to the input by providing an object. In this object, each additional field corresponds to a key-value pair_
   
 ### triggers:
-* getNewIssues → Get all new Jira issues which can optionally be filtered by the date they were created, the project they are in, the labels they contain, the statuses they have, the author of the issue, and many others. The user can also select on whether the issue will include the attachments or not. The output will be an object that contains the ticket and a property called meta which will contain the exact datetime when this trigger was run 
-* getUpdatedIssues → Get all issues that have been updated. This trigger functions the same as the getNewIssues trigger but it retrieves issues that have been updated instead of newly created ones
+* getNewIssuesTrigger → see getNewIssues action 
+* getUpdatedIssuesTrigger → see getUpdatedIssues action
 
 For more info on the Jira api (see https://docs.atlassian.com/software/jira/docs/api/REST/7.12.0/)
 
