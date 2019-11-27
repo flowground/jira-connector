@@ -274,6 +274,52 @@
                 "out": "./lib/schemas/issue.out.json"
             }
         },
+	"getAllIssues": {
+            "main": "./lib/actions/getAllIssues.js",
+            "title": "Get All Issues",
+            "fields": {
+                "startDateTime": {
+                    "label": "Issues created since:",
+                    "required": false,
+                    "viewClass": "TextFieldWithNoteView",
+                    "placeholder": "yyyy-mm-dd hh:mm",
+                    "note": "Please use <code><b>yyyy-mm-dd hh:mm</b></code> format and use the same timezone as the one configured in JIRA."
+                },
+                "projects": {
+                    "label": "Project codes:",
+                    "viewClass": "TextFieldWithNoteView",
+                    "note": "Separate project codes with a single comma. Do not enclose in quotes."
+                },
+                "labels": {
+                    "label": "Retrieve issues having at least one of these labels:",
+                    "viewClass": "TextFieldWithNoteView",
+                    "note": "Separate labels with a single comma. Do not enclose in quotes."
+                },
+                "exclLabels": {
+                    "label": "Exclude issues having one of these labels:",
+                    "viewClass": "TextFieldWithNoteView",
+                    "note": "Separate labels with a single comma. Do not enclose in quotes."
+                },
+                "statuses": {
+                    "label": "Status names:",
+                    "viewClass": "TextFieldWithNoteView",
+                    "note": "Separate status names with a single comma. Do not enclose in quotes."
+                },
+                "includeComments": {
+                    "label": "Include comments:",
+                    "viewClass": "CheckBoxView"
+                },
+                "maxResults": {
+                    "label": "Maximum number of issues to retrieve:",
+                    "viewClass": "TextFieldWithNoteView",
+                    "default": "50",
+                    "note": "Default is 50. If there are more issues than this, they will be ignored."
+                }
+            },
+            "metadata": {
+                "out": "./lib/schemas/issue.out.json"
+            }
+        },
         "createIssue": {
             "main": "./lib/actions/createIssue.js",
             "title": "Create Issue",

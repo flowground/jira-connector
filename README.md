@@ -26,7 +26,8 @@ The first step in using Jira connector is configuring the credentials
 
 ## Using the connector
 ### actions: 
-* getNewIssues → Get all new Jira issues which can optionally be filtered by the date they were created, the project they are in, the labels they contain, the statuses they have, the author of the issue, and many others. The user can also select on whether the issue will include the attachments or not. The output will be an object that contains the ticket and a property called meta which will contain the exact datetime when this action was run 
+* getNewIssues → Get all new Jira issues which can optionally be filtered by the date they were created, the project they are in, the labels they contain, the statuses they have, the author of the issue, and many others. The user can also select on whether the issue will include the attachments or not. The output will be an object that contains the ticket and a property called meta which will contain the exact datetime when this action was run
+* getAllIssues → Get all Jira issues which can optionally be filtered by the date they were created, the project they are in, the labels they contain, the statuses they have, the author of the issue, and many others. The output will be an object that contains the ticket
 * getUpdatedIssues → Get all issues that have been updated. This action functions the same as the getNewIssues action but it retrieves issues that have been updated instead of newly created ones
 * addAttachment → Add Attachment to Jira issue. The file must be previously uploaded to the platform using the processAttachment action     
 * addComment → Add comment to Jira issue. The text of the comment can be formatted in the markup format supported by Jira

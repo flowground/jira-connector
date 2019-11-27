@@ -1,6 +1,6 @@
 {
     "name": "eio.jira",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Jira connector for elastic.io",
     "main": "component.json",
     "directories": {
