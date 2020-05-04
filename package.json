@@ -1,13 +1,15 @@
 {
-    "name": "eio.jira",
+    "name": "jira-connector",
     "version": "1.0.1",
-    "description": "Jira connector for elastic.io",
+    "description": "Jira connector for flowground",
+    "buildType": "docker",
     "main": "component.json",
     "directories": {
         "lib": "lib"
     },
     "scripts": {},
     "dependencies": {
+        "dotenv": "^8.2.0",
         "elasticio-node": "0.0.9",
         "elasticio-sailor-nodejs": "^2.2.1",
         "moment": "^2.22.2",

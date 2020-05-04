@@ -1,7 +1,5 @@
-![Jira logo](logo.png "Jira logo")
+# ![LOGO](logo.png) Jira **flow**ground Connector
   
-# Jira connector
-
 Jira connector(api v2) for the [Mittelstands plattform](https://app.msp-live.external.otc.telekomcloud.com/ "MittelStands platform")
 
 > Jira is a proprietary issue tracking product developed by Atlassian that allows bug tracking and agile project management.
@@ -49,3 +47,13 @@ _Most actions contain a input field called "OTHER" which will allow a user to ad
 For more info on the Jira api (see https://docs.atlassian.com/software/jira/docs/api/REST/7.12.0/)
 
 _**For more information about the triggers and actions usage check the extended [documentation](doc/index.html)**_
+
+## License
+
+**flow**ground :- Telekom iPaaS / jira-connector<br/>
+Copyright © 2020, [Deutsche Telekom AG](https://www.telekom.de)<br/>
+contact: https://flowground.net/en/support-and-contact
+
+All files of this connector are licensed under the Apache 2.0 License. For details
+see the file LICENSE on the top-level directory.
+

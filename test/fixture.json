@@ -2,11 +2,11 @@
     "fixtures": {
         "getNewIssues": {
             "cfg": {
-                "baseUrl": "https://gard.telekom.de/gard/rest/api/2",
-                "projects": "CONNDEV",
+                "baseUrl": "{{BASE_URL}}",
+                "projects": "{{PROJECT}}",
                 "username": "{{USER}}",
                 "password": "{{PASSWORD}}",
-                "startDateTime": "2018-10-11",
+                "startDateTime": "{{START_DATE}}",
                 "labels": "",
                 "exclLabels": ""
             },
@@ -16,10 +16,10 @@
         },
         "getUpdatedIssues": {
             "cfg": {
-                "baseUrl": "https://gard.telekom.de/gard/rest/api/2",
-                "projects": "KONNENTW",
+                "baseUrl": "{{BASE_URL}}",
+                "projects": "{{PROJECT}}",
                 "apiKey": "{{API_KEY}}",
-                "startDateTime": "2018-01-01",
+                "startDateTime": "{{START_DATE}}",
                 "username": "{{USER}}",
                 "password": "{{PASSWORD}}",
                 "maxResults": 2,
@@ -32,15 +32,15 @@
         },
         "createIssue": {
             "cfg": {
-                "baseUrl": "https://gard.telekom.de/gard/rest/api/2",
-                "project": "CONNDEV",
+                "baseUrl": "{{BASE_URL}}",
+                "projects": "{{PROJECT}}",
                 "apiKey": "{{API_KEY}}"
             },
             "msg": {
                 "body": {
                     "fields": {
                         "project": {
-                            "key": "CONNDEV"
+                            "key": "{{PROJECT}}"
                         },
                         "summary": "REST Test",
                         "description": "Creating of an issue using project keys and issue type names using the REST API",
@@ -53,29 +53,29 @@
         },
         "updateIssue": {
             "cfg": {
-                "baseUrl": "https://gard.telekom.de/gard/rest/api/2",
-                "project": "CONNDEV",
+                "baseUrl": "{{BASE_URL}}",
+                "projects": "{{PROJECT}}",
                 "username": "{{USER}}",
                 "password": "{{PASSWORD}}"
             },
             "msg": {
                 "body":  {
-                    "id": "CONNDEV-26",
+                    "id": "{{ISSUE_ID}}",
                     "fields": {
-                        "assignee":{"name":"rares.gaia@endava.com"}
+                        "assignee":{"name":"{{ASSIGNEE}}"}
                     }
                 }
             }
         },
         "addComment": {
             "cfg": {
-                "baseUrl": "https://gard.telekom.de/gard/rest/api/2",
+                "baseUrl": "{{BASE_URL}}",
                 "username": "{{USER}}",
                 "password": "{{PASSWORD}}"
             },
             "msg": {
                 "body":  {
-                    "issueId": "CONNDEV-26",
+                    "issueId": "{{ISSUE_ID}}",
                     "comment": {
                         "body": "lorem ipsum dolorem sit"
                     }
@@ -84,15 +84,15 @@
         },
         "addAttachment": {
             "cfg": {
-                "baseUrl": "https://gard.telekom.de/gard/rest/api/2",
+                "baseUrl": "{{BASE_URL}}",
                 "username": "{{USER}}",
                 "password": "{{PASSWORD}}"
             },
             "msg": {
                 "body":  {
-                    "issueId": "CONNDEV-26",
+                    "issueId": "{{ISSUE_ID}}",
                     "attachment": {
-                        "getAttachmentUrl": "http://steward-service.platform.svc.cluster.local:8200/files/7db1ab34-a531-4042-a6d6-f460924c55c3",
+                        "getAttachmentUrl": "{{ATTACHMENT_URL}}",
                         "contentType": "text/plain",
                         "filename": "test.txt"
                     }
